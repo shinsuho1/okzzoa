@@ -130,6 +130,14 @@
     }
 }
 
+@mixin responsive-flex-el-list($count,$column-gap,$row-gap){
+    column-gap: $column-gap;
+    row-gap: $row-gap;
+    >* {
+        width: calc(100% / $count - ($column-gap * ($count - 1) / $count));
+    }
+}
+
 @mixin fullsize {
     width: 100%;
     height: 100%;
@@ -544,7 +552,7 @@ body {
     }
 }
 
-@media (max-width:450px) {
+@media (max-width:767px) {
     .ta-only {
         display: none;
     }

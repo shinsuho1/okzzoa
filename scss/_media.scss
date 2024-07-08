@@ -1,11 +1,75 @@
-@media (max-width:1300px) {
+@media (max-width:1700px){
+    main{
+        &#main_page{
+            section{
+                &.s04{
+                    article{
+                        margin: 0;
+                        padding: 0 3%;
+                        .wrap{
+                            .title{
+                                margin-bottom: 50px;
+                            }
+                            .swiper{
+                                .swiper-wrapper{
+                                    @include responsive-flex-el-list(6,30px,10px);
+                                    .swiper-slide{
+                                        p{
+                                            margin-top: 20px;
+                                            font-size: 20px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &.s05{
+                    article{
+                        margin: 0;
+                        padding: 0 3%;
+                        .wrap{
+                            .swiper{
+                                .swiper-wrapper{
+                                    @include responsive-flex-el-list(3,15px,15px);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width:1360px) {
     main {
         &#main_page{
             section{
                 &:not(.s01){
+                    padding: 120px 0;
+                    .section-bg{
+                        width: 600px;
+                    }
                     article{
                         margin: 0;
-                        padding: 0 5%;
+                        padding: 0 3%;
+                        .wrap{
+                            .title{
+                                .logo{
+                                    width: 80px;
+                                    margin-bottom: 25px;
+                                }
+                                h2{
+                                    font-size: 32px;
+                                }
+                                p{
+                                    font-size: 18px;
+                                }
+                                h2+p{
+                                    margin: 15px 0;
+                                }
+                            }
+                        }
                     }
             
                 }
@@ -17,7 +81,124 @@
                                     .swiper-slide{
                                         .title{
                                             margin: 0;
-                                            padding: 0 5%;
+                                            padding: 0 3%;
+                                            h2{
+                                                font-size: 58px;
+                                                margin-bottom: 20px;
+                                            }
+                                            p{
+                                                font-size: 22px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &.s03{
+                    article{
+                        .wrap{
+                            .title-wrap{
+                                margin-bottom: 40px;
+                                .title{
+                                    gap: 10px;
+                                }
+                                .more{
+                                    font-size: 16px;
+                                }
+                            }
+                            ul{
+                                gap: 10px;
+                                li{
+                                    height: 400px;
+                                    .info{
+                                        padding: 0 10px;
+                                        .text{
+                                            .icon-wrap{
+                                                width: 50px;
+                                                margin-bottom: 20px;
+                                            }    
+                                            h3{
+                                                font-size: 32px;
+                                            }
+                                            p{
+                                                font-size: 18px;
+                                                margin: 20px 0 60px;
+                                            }
+                                        }
+                                        .button{
+                                            width: 160px;
+                                            height: 45px;
+                                            font-size: 20px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &.s04{
+                    article{
+                        .wrap{
+                            .title{
+                                margin-bottom: 40px;
+                            }
+                            .swiper{
+                                overflow: initial;
+                                .swiper-wrapper{
+                                    @include responsive-flex-el-list(5,30px,10px);
+                                }
+                            }
+                        }
+                    }
+                }
+                &.s06{
+                    article{
+                        .wrap{
+                            .content{
+                                padding-top: 40px;
+                                gap: 40px;
+                                .tit{
+                                    font-size: 20px;
+                                }
+                                p{
+                                    font-size: 15px;
+                                }
+                                .date{
+                                    font-size: 14px;
+                                }
+    
+                                .detail{
+                                    width: 420px;
+                                    a{
+                                        display: block;
+                                        width: 100%;
+                                        .text{
+                                            .tit{
+                                                margin-bottom: 20px;
+                                            }
+                                            p{
+                                                margin-bottom: 15px;
+                                            }
+                                        }
+                                    }
+                                }
+                                .list{
+                                    width: calc(100% - 420px - 40px);
+                                    h3{
+                                        font-size: 42px;
+                                        margin-bottom: 50px;
+                                    }
+                                    ul{
+                                        li{
+                                            padding: 20px 0;
+                                            .tit{
+                                                margin-bottom: 5px;
+                                            }
+                                            p{
+                                                margin-bottom: 25px;
+                                            }
                                         }
                                     }
                                 }
@@ -31,15 +212,428 @@
             section{
                 article{
                     margin: 0;
-                    padding: 0 5%;
+                    padding: 0 3%;
                 }
             }
         }
     }
 }
 
-@media (max-width:1024px) {}
+@media (max-width:1024px) {
+    main{
+        &#main_page{
+            section{
+                &:not(.s01){
+                    padding: 100px 0;
+                    article{
+                        padding: 0 5%;
+                        .wrap{
+                            .title{
+                                text-align: center;
+                                .logo{
+                                    width: 80px;
+                                    margin-bottom: 20px;
+                                }
+                                h2{
+                                    font-size: 28px;
+                                }
+                                p{
+                                    font-size: 16px;
+                                }
+                                h2+p{
+                                    margin: 10px 0;
+                                }
+                            }
+                        }
+                    }
+            
+                }
+                &.s01{
+                    article{
+                        .wrap{
+                            .swiper{
+                                .swiper-wrapper{
+                                    .swiper-slide{
+                                        .title{
+                                            padding: 0 5%;
+                                            h2{
+                                                font-size: 48px;
+                                                margin-bottom: 15px;
+                                            }
+                                            p{
+                                                font-size: 20px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &.s03{
+                    article{
+                        .wrap{
+                            .title-wrap{
+                                margin-bottom: 20px;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: center;
+                                .title{
+                                    flex-direction: column;
+                                    justify-content: center;
+                                    align-items: center;
+                                    gap: 0;
+                                    .logo{
+                                        margin-bottom: 20px;
+                                    }
+                                    h2+p{
+                                        margin: 10px 0;
+                                    }
+                                }
+                            }
+                            ul{
+                                gap: 10px;
+                                flex-direction: column;
+                                li{
+                                    height: 300px;
+                                    .info{
+                                        .text{
+                                            .icon-wrap{
+                                                width: 45px;
+                                                margin-bottom: 10px;
+                                            }    
+                                            h3{
+                                                font-size: 28px;
+                                            }
+                                            p{
+                                                font-size: 16px;
+                                                margin: 10px 0 30px;
+                                            }
+                                        }
+                                        .button{
+                                            font-size: 18px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &.s04{
+                    article{
+                        padding: 0 5%;
+                        .wrap{
+                            .title{
+                                margin-bottom: 30px;
+                            }
+                            .swiper{
+                                .swiper-wrapper{
+                                    @include responsive-flex-el-list(4,20px,10px);
+                                    .swiper-slide{
+                                        p{
+                                            margin-top: 15px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &.s05{
+                    article{
+                        margin: 0;
+                        padding: 0 5%;
+                        .wrap{
+                            .swiper{
+                                overflow: initial;
+                                &::before{
+                                    right: -100px;
+                                }
+                                &::after{
+                                    left: -100px
+                                }
+                                .swiper-wrapper{
+                                    @include responsive-flex-el-list(2,10px,15px);
+                                    .swiper-slide{
+                                        .text{
+                                            padding: 10px 25px 15px;
+                                            .date{
+                                                margin-bottom: 3px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &.s06{
+                    article{
+                        .wrap{
+                            .content{
+                                padding-top: 30px;
+                                gap: 30px;
+                                flex-direction: column;
+                                max-width: 760px;
+                                margin: 0 auto;
+                                br{
+                                    display: none;
+                                }
+                                // .tit{
+                                //     font-size: 20px;
+                                // }
+                                // p{
+                                //     font-size: 15px;
+                                // }
+                                // .date{
+                                //     font-size: 14px;
+                                // }
+    
+                                .detail{
+                                    width: 100%;
+                                    // a{
+                                    //     display: block;
+                                    //     width: 100%;
+                                    //     .text{
+                                    //         .tit{
+                                    //             margin-bottom: 20px;
+                                    //         }
+                                    //         p{
+                                    //             margin-bottom: 15px;
+                                    //         }
+                                    //     }
+                                    //     .img-wrap{
+                                    //         max-height: 400px;
+                                    //     }
+                                    // }
+                                }
+                                .list{
+                                    width: 100%;
+                                    // h3{
+                                    //     font-size: 42px;
+                                    //     margin-bottom: 30px;
+                                    // }
+                                    // ul{
+                                    //     li{
+                                    //         padding: 20px 0;
+                                    //         .tit{
+                                    //             margin-bottom: 5px;
+                                    //         }
+                                    //         p{
+                                    //             margin-bottom: 25px;
+                                    //         }
+                                    //     }
+                                    // }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
-@media (max-width:767px) {}
+@media (max-width:767px) {
+    main{
+        &#main_page{
+            section{
+                &:not(.s01){
+                    padding: 80px 0;
+                    article{
+                        .wrap{
+                            .title{
+                                .logo{
+                                    width: 80px;
+                                    margin-bottom: 15px;
+                                }
+                                h2{
+                                    font-size: 24px;
+                                }
+                                p{
+                                    font-size: 14px;
+                                }
+                                h2+p{
+                                    margin: 10px 0;
+                                }
+                                .more{
+                                    padding: 10px 20px;
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+                    }
+            
+                }
+                &.s01{
+                    article{
+                        .wrap{
+                            .swiper{
+                                .swiper-wrapper{
+                                    .swiper-slide{
+                                        .title{
+                                            margin-top: 0px;
+                                            h2{
+                                                font-size: 38px;
+                                                margin-bottom: 10px;
+                                            }
+                                            p{
+                                                font-size: 18px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &.s03{
+                    article{
+                        .wrap{
+                            .title-wrap{
+                                .title{
+                                    .logo{
+                                        margin-bottom: 20px;
+                                    }
+                                    h2+p{
+                                        margin: 10px 0;
+                                    }
+                                }
+                                .more{
+                                    font-size: 14px;
+                                }
+                            }
+                            ul{
+                                gap: 10px;
+                                li{
+                                    height: 280px;
+                                    .info{
+                                        .text{
+                                            .icon-wrap{
+                                                width: 40px;
+                                            }    
+                                            h3{
+                                                font-size: 24px;
+                                            }
+                                            p{
+                                                font-size: 14px;
+                                                margin: 10px 0 20px;
+                                            }
+                                        }
+                                        .button{
+                                            width: 140px;
+                                            height: 40px;
+                                            font-size: 16px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &.s04{
+                    article{
+                        .wrap{
+                            .title{
+                                margin-bottom: 20px;
+                            }
+                            .swiper{
+                                .swiper-wrapper{
+                                    @include responsive-flex-el-list(3.5,10px,10px);
+                                    .swiper-slide{
+                                        p{
+                                            margin-top: 10px;
+                                            font-size: 18px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &.s05{
+                    article{
+                        .wrap{
+                            .swiper{
+                                .swiper-wrapper{
+                                    @include responsive-flex-el-list(1.5,10px,15px);
+                                    .swiper-slide{
+                                        .text{
+                                            padding: 10px 20px 10px;
+                                            font-size: 14px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
-@media (max-width:450px) {}
+@media (max-width:450px) {
+    main{
+        &#main_page{
+            section{
+                &.s01{
+                    article{
+                        .wrap{
+                            .swiper{
+                                .swiper-wrapper{
+                                    .swiper-slide{
+                                        .title{
+                                            h2{
+                                                font-size: 32px;
+                                            }
+                                            p{
+                                                font-size: 16px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &.s04{
+                    article{
+                        .wrap{
+                            .swiper{
+                                .swiper-wrapper{
+                                    @include responsive-flex-el-list(2.5,10px,10px);
+                                    .swiper-slide{
+                                        p{
+                                            font-size: 16px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &.s05{
+                    article{
+                        .wrap{
+                            .swiper{
+                                .swiper-wrapper{
+                                    @include responsive-flex-el-list(1.3,10px,15px);
+                                    .swiper-slide{
+                                        .text{
+                                            padding: 10px 20px 10px;
+                                            font-size: 14px;
+                                            .date{
+                                                margin-bottom: 0;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,11 +1,13 @@
 $headerHeight: 90px;
 header{
     width: 100%;
-    position: fixed;
     height: $headerHeight;
+    @include flex-center;
+    position: fixed;
+    top: -$headerHeight;
     z-index: 100;
     background-color: #Fff;
-    @include flex-center;
+    @include transition(.5s);
     .header-wrap{
         @include inner-center(1600px);
         @include flex-space-center;
@@ -164,6 +166,9 @@ header{
             height: 300px;
             opacity: 1;
         }
+    }
+    &.active{
+        top: 0;
     }
 }
 

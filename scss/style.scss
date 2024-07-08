@@ -18,11 +18,22 @@ main {
         section {
             &:not(.s01){
                 padding: 150px 0;
+                position: relative;
+                .section-bg{
+                    position: absolute;
+                    width: 960px;
+                    aspect-ratio: 961/815;
+                    z-index: -1;
+                    img{
+                        @include img-cover;
+                    }
+                }
                 article{
                     @include inner-center($innerWidth);
                     .wrap{
                         .title{
                             @include flex-column-center;
+                            text-align: center;
                             .logo{
                                 width: 84px;
                                 aspect-ratio: 84/50;
@@ -31,8 +42,19 @@ main {
                                     @include img-cover;
                                 }
                             }
+                            .split-title,.split-sub-title{
+                                span{
+                                    display: inline-block;
+                                    opacity: 0;
+                                    transform: translateY(20px);
+                                    min-width: 10px;
+                                }
+                            }
                             h2{
                                 font-size: 36px;
+                                strong{
+                                    color: #c3d600;
+                                }
                             }
                             p{
                                 font-size: 20px;
@@ -98,7 +120,7 @@ main {
                                         z-index: 2;
                                         color: #f5f5f5;
                                         text-align: center;
-                                        margin-top: 150px;
+                                        // margin-top: 150px;
                                         h2{
                                             width: 100%;
                                             font-size: 68px;
@@ -118,14 +140,62 @@ main {
                     }
                 }
             }
+            &.s02{
+                padding-bottom: 0;
+                @include bg-cover("../images/main/s02_bg.png");
+                max-height: 120vh;
+                overflow: hidden;
+                article{
+                    .wrap{
+                        .title{
+                            color: #fff;
+                            margin-bottom: 120px;
+                        }
+                        .trigger-wrap{
+                            overflow: hidden;
+                            padding-top: 100px;
+                            .box{
+                                font-family: "Noto Sans KR";
+                                line-height: 1.5;
+                                font-weight: normal;
+                                @include flex-column;
+                                align-items: flex-start;
+                                justify-content: flex-start;
+                                .img-wrap{
+                                    margin-bottom: 20px;
+                                }
+                                strong{
+                                    color: #9d9d9d;
+                                    font-size: 19px;
+                                }
+                                p{
+                                    color: #Fff;
+                                    font-size: 20px;
+                                }
+                                &.right{
+                                    align-items: flex-end;
+                                }
+                                &:nth-of-type(3){
+                                    position: relative;
+                                    top: -300px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
             &.s03{
+                .section-bg{
+                    right: 0;
+                    top: -80px;
+                }
                 article{
                     .wrap{
                         .title-wrap{
                             display: flex;
                             justify-content: space-between;
                             align-items: flex-end;
-                            margin-bottom: 70px;
+                            margin-bottom: 50px;
                             .title{
                                 display: flex;
                                 justify-content: flex-start;
@@ -173,36 +243,37 @@ main {
                                     z-index: 2;
                                     @include fullsize;
                                     @include flex-column-center;
-                                    .icon-wrap{
-                                        width: 60px;
-                                        margin-bottom: 30px;
-                                        img{
-                                            width: 100%;
-                                            object-fit: contain;
-                                        }
-                                    }
                                     .text{
                                         color: #fff;
                                         @include flex-column-center;
+                                        .icon-wrap{
+                                            width: 60px;
+                                            margin-bottom: 30px;
+                                            img{
+                                                width: 100%;
+                                                object-fit: contain;
+                                            }
+                                        }
                                         h3{
                                             font-size: 36px;
                                         }
                                         p{
-                                            font-family: 20px;
+                                            font-size: 20px;
                                             font-weight: normal;
                                             font-family: "Noto Sans KR";
-                                            margin: 25px 0 100px;
+                                            margin: 25px 0 80px;
                                         }
-                                        .button{
-                                            width: 180px;
-                                            height: 50px;
-                                            font-size: 23px;
-                                            border-radius: 10px;
-                                            a{
-                                                @include flex-center;
-                                                @include fullsize;
-                                                color: #fff;
-                                            }
+                                    }
+                                    .button{
+                                        width: 180px;
+                                        height: 50px;
+                                        font-size: 23px;
+                                        border-radius: 10px;
+                                        @include transition(.3s);
+                                        a{
+                                            @include flex-center;
+                                            @include fullsize;
+                                            color: #fff;
                                         }
                                     }
                                 }
@@ -245,6 +316,9 @@ main {
                             .swiper-wrapper{
                                 width: 100%;
                                 transition-timing-function:linear;
+                                @include flex-el-list(7,40px,10px);
+                                align-items: center;
+                                flex-wrap: nowrap;
                                 .swiper-slide{
                                     .img-wrap{
                                         width: 100%;
@@ -275,12 +349,38 @@ main {
                         .swiper{
                             width: 100%;
                             // overflow: initial;
+                            position: relative;
+                            &::after{
+                                content: "";
+                                position: absolute;
+                                left: -50px;
+                                top: -10%;
+                                width: 50px;
+                                height: 120%;
+                                z-index: 10;
+                                background-color: #Fff;
+                                box-shadow: 30px 0 20px #Fff;
+                            }
+                            &::before{
+                                content: "";
+                                position: absolute;
+                                right: -50px;
+                                top: -10%;
+                                width: 50px;
+                                height: 120%;
+                                z-index: 10;
+                                background-color: #Fff;
+                                box-shadow: -30px 0 20px #Fff;
+                            }
+            
+
                             .swiper-wrapper{
                                 width: 100%;
                                 transition-timing-function:linear;
+                                @include flex-el-list(3.5,15px,15px);
+                                align-items: center;
+                                flex-wrap: nowrap;
                                 .swiper-slide{
-                                    width: 100%;
-                                    // border: 1px;
                                     border: 1px solid #eee;
                                     .video-wrap{
                                         width: 100%;
@@ -310,6 +410,10 @@ main {
                 }
             }
             &.s06{
+                .section-bg{
+                    left: -100px;
+                    bottom: -80px;
+                }
                 article{
                     .wrap{
                         .content{
@@ -370,6 +474,7 @@ main {
                                     font-size: 50px;
                                     margin-bottom: 60px;
                                     font-family: "Chosunilbo_myungjo";
+                                    font-weight: bold;
                                 }
                                 ul{
                                     width: 100%;
@@ -382,6 +487,9 @@ main {
                                         }
                                         p{
                                             margin-bottom: 35px;
+                                        }
+                                        &:first-child{
+                                            padding-top: 0;
                                         }
                                     }
                                 }
@@ -401,6 +509,7 @@ main {
             max-height: 500px;
             min-height: 300px;
             position: relative;
+            margin-top: $headerHeight;
             .bg{
                 position: absolute;
                 @include fullsize;
