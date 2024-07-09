@@ -1,0 +1,176 @@
+<div id="tabmenu">
+    <a href="../main/index.html" class="home">
+        <img src="../images/common/home_icon.svg" alt="홈버튼">
+    </a>
+    <div class="menu">
+        <div class="slide">
+            <span>
+                <?php if ($PAGE_CODE_1 == " 01") {
+                    echo "소개";
+                } ?>
+                <?php if ($PAGE_CODE_1 == " 02") {
+                    echo "활동";
+                } ?>
+                <?php if ($PAGE_CODE_1 == " 03") {
+                    echo "후원";
+                } ?>
+                <?php if ($PAGE_CODE_1 == " 04") {
+                    echo "캠페인";
+                } ?>
+                <?php if ($PAGE_CODE_1 == " 05") {
+                    echo "소식";
+                } ?>
+            </span>
+            <ul>
+                <li class="<?php if ($PAGE_CODE_1 == "01") {
+                                echo 'none';
+                            } ?>"><a href="../about/okzzoa.html">소개</a></li>
+                <li class="<?php if ($PAGE_CODE_1 == "02") {
+                                echo 'none';
+                            } ?>"><a href="../">활동</a></li>
+                <li class="<?php if ($PAGE_CODE_1 == "03") {
+                                echo 'none';
+                            } ?>"><a href="../">후원</a></li>
+                <li class="<?php if ($PAGE_CODE_1 == "04") {
+                                echo 'none';
+                            } ?>"><a href="../">캠페인</a></li>
+                <li class="<?php if ($PAGE_CODE_1 == "05") {
+                                echo 'none';
+                            } ?>"><a href="../">소식</a></li>
+            </ul>
+
+        </div>
+        <div class="arrow">
+            <svg width="21" height="12" viewBox="0 0 21 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_493_10)">
+                    <path d="M1.00037 1.71314L10.6281 10.2869L20.2559 1.71313" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </g>
+            </svg>
+        </div>
+    </div>
+    <div class="menu">
+        <div class="slide">
+            <span>
+                <?php if ($PAGE_CODE_2 == "0101") {
+                    echo "오케이좋아연예인봉사단";
+                } ?>
+                <?php if ($PAGE_CODE_2 == "0102") {
+                    echo "연혁";
+                } ?>
+                <?php if ($PAGE_CODE_2 == "0103") {
+                    echo "조직도";
+                } ?>
+                <?php if ($PAGE_CODE_2 == "0104") {
+                    echo "CI소개";
+                } ?>
+
+                <?php if ($PAGE_CODE_2 == "0201") {
+                    echo "국내활동";
+                } ?>
+                <?php if ($PAGE_CODE_2 == "0202") {
+                    echo "해외활동";
+                } ?>
+                <?php if ($PAGE_CODE_2 == "0203") {
+                    echo "활동후기";
+                } ?>
+
+                <?php if ($PAGE_CODE_2 == "0301") {
+                    echo "정기 일시후원";
+                } ?>
+                <?php if ($PAGE_CODE_2 == "0302") {
+                    echo "기업후원";
+                } ?>
+                <?php if ($PAGE_CODE_2 == "0303") {
+                    echo "착한가게";
+                } ?>
+                <?php if ($PAGE_CODE_2 == "0304") {
+                    echo "후원내역";
+                } ?>
+
+                <?php if ($PAGE_CODE_2 == "0401") {
+                    echo "캠페인";
+                } ?>
+                <?php if ($PAGE_CODE_2 == "0402") {
+                    echo "캠페인 후기";
+                } ?>
+
+                <?php if ($PAGE_CODE_2 == "0501") {
+                    echo "공지사항";
+                } ?>
+                <?php if ($PAGE_CODE_2 == "0502") {
+                    echo "언론보도";
+                } ?>
+            </span>
+            <ul>
+                <?php
+                if ($PAGE_CODE_1 == "01") {
+                ?>
+                    <li class=<?php if ($PAGE_CODE_2 == "0101") {
+                                    echo 'none';
+                                } ?>><a href="../about/okzzoa.html">오케이좋아연예인봉사단</a></li>
+                    <li class=<?php if ($PAGE_CODE_2 == "0102") {
+                                    echo 'none';
+                                } ?>><a href="../about/history.html">연혁</a></li>
+                    <li class=<?php if ($PAGE_CODE_2 == "0103") {
+                                    echo 'none';
+                                } ?>><a href="../about/organization.html">조직도</a></li>
+                    <li class=<?php if ($PAGE_CODE_2 == "0104") {
+                                    echo 'none';
+                                } ?>><a href="../about/ci.html">CI 소개</a></li>
+                <?php
+                } else if ($PAGE_CODE_1 == "02") {
+                ?>
+                    <li class=<?php if ($PAGE_CODE_2 == "0201") {
+                                    echo 'none';
+                                } ?>><a href="../">국내활동</a></li>
+                    <li class=<?php if ($PAGE_CODE_2 == "0202") {
+                                    echo 'none';
+                                } ?>><a href="../">해외활동</a></li>
+                    <li class=<?php if ($PAGE_CODE_2 == "0203") {
+                                    echo 'none';
+                                } ?>><a href="../">활동후기</a></li>
+                <?php
+                } else if ($PAGE_CODE_1 == "03") {
+                ?>
+                    <li class=<?php if ($PAGE_CODE_2 == "0301") {
+                                    echo 'none';
+                                } ?>><a href="../">정기 일시후원</a></li>
+                    <li class=<?php if ($PAGE_CODE_2 == "0302") {
+                                    echo 'none';
+                                } ?>><a href="../">기업후원</a></li>
+                    <li class=<?php if ($PAGE_CODE_2 == "0303") {
+                                    echo 'none';
+                                } ?>><a href="../">착한가게</a></li>
+                    <li class=<?php if ($PAGE_CODE_2 == "0304") {
+                                    echo 'none';
+                                } ?>><a href="../">후원내역</a></li>
+                <?php
+                } else if ($PAGE_CODE_1 == "04") {
+                ?>
+                    <li class=<?php if ($PAGE_CODE_2 == "0401") {
+                                    echo 'none';
+                                } ?>><a href="../">캠페인</a></li>
+                    <li class=<?php if ($PAGE_CODE_2 == "0402") {
+                                    echo 'none';
+                                } ?>><a href="../">캠페인후기</a></li>
+                <?php
+                } else if ($PAGE_CODE_1 == "05") {
+                ?>
+                    <li class=<?php if ($PAGE_CODE_2 == "0501") {
+                                    echo 'none';
+                                } ?>><a href="../">공지사항</a></li>
+                    <li class=<?php if ($PAGE_CODE_2 == "0502") {
+                                    echo 'none';
+                                } ?>><a href="../">언론보도</a></li>
+                <?php } ?>
+            </ul>
+        </div>
+        <div class="arrow">
+            <svg width="21" height="12" viewBox="0 0 21 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_493_10)">
+                    <path d="M1.00037 1.71314L10.6281 10.2869L20.2559 1.71313" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </g>
+            </svg>
+        </div>
+    </div>
+</div>

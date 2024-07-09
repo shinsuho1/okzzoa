@@ -5,67 +5,83 @@ $innerWidth: 1360px;
 @import "./gnb";
 
 main {
-    section{
+    section {
         width: 100%;
-        article{
+
+        article {
             width: 100%;
-            .wrap{
+
+            .wrap {
                 width: 100%;
             }
         }
     }
+
     &#main_page {
         section {
-            &:not(.s01){
+            &:not(.s01) {
                 padding: 150px 0;
                 position: relative;
-                .section-bg{
+
+                .section-bg {
                     position: absolute;
                     width: 960px;
                     aspect-ratio: 961/815;
                     z-index: -1;
-                    img{
+
+                    img {
                         @include img-cover;
                     }
                 }
-                article{
+
+                article {
                     @include inner-center($innerWidth);
-                    .wrap{
-                        .title{
+
+                    .wrap {
+                        .title {
                             @include flex-column-center;
                             text-align: center;
-                            .logo{
+
+                            .logo {
                                 width: 84px;
                                 aspect-ratio: 84/50;
                                 margin-bottom: 30px;
-                                img{
+
+                                img {
                                     @include img-cover;
                                 }
                             }
-                            .split-title,.split-sub-title{
-                                span{
+
+                            .split-title,
+                            .split-sub-title {
+                                span {
                                     display: inline-block;
                                     opacity: 0;
                                     transform: translateY(20px);
                                     min-width: 10px;
                                 }
                             }
-                            h2{
+
+                            h2 {
                                 font-size: 36px;
-                                strong{
+
+                                strong {
                                     color: #c3d600;
                                 }
                             }
-                            p{
+
+                            p {
                                 font-size: 20px;
                                 font-family: "Pretendard";
                                 font-weight: normal;
                                 color: #6a6a6a;
                             }
-                            h2+p{
+
+                            h2+p {
                                 margin: 20px 0;
                             }
-                            .more{
+
+                            .more {
                                 padding: 10px 30px;
                                 font-family: "Noto Sans KR";
                                 font-weight: normal;
@@ -74,7 +90,8 @@ main {
                                 border: 1px solid #eee;
                                 line-height: 1;
                                 margin-bottom: 20px;
-                                a{
+
+                                a {
                                     font-family: inherit;
                                 }
                             }
@@ -82,52 +99,60 @@ main {
                     }
                 }
             }
-            &.s01{
+
+            &.s01 {
                 width: 100%;
                 height: 100vh;
+
                 article {
                     @include fullsize;
+
                     .wrap {
                         @include fullsize;
+
                         .swiper {
                             @include fullsize;
                             position: relative;
                             z-index: 2;
-    
+
                             .swiper-wrapper {
                                 @include fullsize;
+
                                 .swiper-slide {
                                     @include fullsize;
                                     @include flex-center;
                                     position: relative;
+
                                     .bg {
                                         @include fullsize;
                                         position: absolute;
                                         top: 0;
                                         left: 0;
                                         z-index: 1;
-    
+
                                         >img,
                                         >video,
                                         >iframe {
                                             @include img-cover;
                                         }
                                     }
-    
+
                                     .title {
                                         @include inner-center($innerWidth);
                                         position: relative;
                                         z-index: 2;
                                         color: #f5f5f5;
                                         text-align: center;
+
                                         // margin-top: 150px;
-                                        h2{
+                                        h2 {
                                             width: 100%;
                                             font-size: 68px;
                                             margin-bottom: 30px;
                                             font-weight: normal;
                                         }
-                                        p{
+
+                                        p {
                                             width: 100%;
                                             font-family: "Pretendard";
                                             font-size: 24px;
@@ -140,42 +165,51 @@ main {
                     }
                 }
             }
-            &.s02{
+
+            &.s02 {
                 padding-bottom: 0;
                 @include bg-cover("../images/main/s02_bg.png");
                 max-height: 120vh;
                 overflow: hidden;
-                article{
-                    .wrap{
-                        .title{
+
+                article {
+                    .wrap {
+                        .title {
                             color: #fff;
                             margin-bottom: 120px;
                         }
-                        .trigger-wrap{
+
+                        .trigger-wrap {
                             overflow: hidden;
                             padding-top: 100px;
-                            .box{
+
+                            .box {
                                 font-family: "Noto Sans KR";
                                 line-height: 1.5;
                                 font-weight: normal;
                                 @include flex-column;
                                 align-items: flex-start;
                                 justify-content: flex-start;
-                                .img-wrap{
+
+                                .img-wrap {
                                     margin-bottom: 20px;
                                 }
-                                strong{
+
+                                strong {
                                     color: #9d9d9d;
                                     font-size: 19px;
                                 }
-                                p{
+
+                                p {
                                     color: #Fff;
                                     font-size: 20px;
                                 }
-                                &.right{
+
+                                &.right {
                                     align-items: flex-end;
                                 }
-                                &:nth-of-type(3){
+
+                                &:nth-of-type(3) {
                                     position: relative;
                                     top: -300px;
                                 }
@@ -184,116 +218,137 @@ main {
                     }
                 }
             }
-            &.s03{
-                .section-bg{
+
+            &.s03 {
+                .section-bg {
                     right: 0;
                     top: -80px;
                 }
-                article{
-                    .wrap{
-                        .title-wrap{
-                            display: flex;
-                            justify-content: space-between;
-                            align-items: flex-end;
+
+                article {
+                    .wrap {
+                        .title-wrap {
+                            @include flex-space-end;
                             margin-bottom: 50px;
-                            .title{
+
+                            .title {
                                 display: flex;
                                 justify-content: flex-start;
                                 align-items: flex-end;
                                 flex-direction: row;
                                 gap: 15px;
-                                .logo{
+
+                                .logo {
                                     margin-bottom: initial;
                                 }
-                                p{
+
+                                p {
                                     margin: 0;
                                 }
                             }
-                            .more{
+
+                            .more {
                                 font-size: 18px;
                                 color: #6a6a6a;
                                 font-weight: bold;
-                                a{
+
+                                a {
                                     font-family: "Noto Sans KR";
                                 }
                             }
                         }
-                        ul{
+
+                        ul {
                             width: 100%;
                             @include flex-center;
                             gap: 15px;
-                            li{
+
+                            li {
                                 width: 100%;
                                 height: 510px;
                                 position: relative;
                                 border-radius: 20px;
-                                .bg{
+
+                                .bg {
                                     position: absolute;
                                     @include fullsize;
                                     @include pos-center;
                                     z-index: 1;
-                                    img{
+
+                                    img {
                                         border-radius: 20px;
                                         @include img-cover;
                                     }
                                 }
-                                .info{
+
+                                .info {
                                     text-align: center;
                                     position: relative;
                                     z-index: 2;
                                     @include fullsize;
                                     @include flex-column-center;
-                                    .text{
+
+                                    .text {
                                         color: #fff;
                                         @include flex-column-center;
-                                        .icon-wrap{
+
+                                        .icon-wrap {
                                             width: 60px;
                                             margin-bottom: 30px;
-                                            img{
+
+                                            img {
                                                 width: 100%;
                                                 object-fit: contain;
                                             }
                                         }
-                                        h3{
+
+                                        h3 {
                                             font-size: 36px;
                                         }
-                                        p{
+
+                                        p {
                                             font-size: 20px;
                                             font-weight: normal;
                                             font-family: "Noto Sans KR";
                                             margin: 25px 0 80px;
                                         }
                                     }
-                                    .button{
+
+                                    .button {
                                         width: 180px;
                                         height: 50px;
                                         font-size: 23px;
                                         border-radius: 10px;
                                         @include transition(.3s);
-                                        a{
+
+                                        a {
                                             @include flex-center;
                                             @include fullsize;
                                             color: #fff;
                                         }
                                     }
                                 }
-                                &:nth-child(1){
-                                    .button{
+
+                                &:nth-child(1) {
+                                    .button {
                                         background-color: #f8b500;
                                     }
                                 }
-                                &:nth-child(2){
-                                    .button{
+
+                                &:nth-child(2) {
+                                    .button {
                                         background-color: #e31c93;
                                     }
                                 }
-                                &:nth-child(3){
-                                    .button{
+
+                                &:nth-child(3) {
+                                    .button {
                                         background-color: #b9cb00;
                                     }
                                 }
-                                &:nth-child(4){
-                                    .button{
+
+                                &:nth-child(4) {
+                                    .button {
                                         background-color: #f8b500;
                                     }
                                 }
@@ -302,32 +357,40 @@ main {
                     }
                 }
             }
-            &.s04{
+
+            &.s04 {
                 background-color: #f0f0f0;
-                article{
+
+                article {
                     max-width: 1700px;
-                    .wrap{
-                        .title{
+
+                    .wrap {
+                        .title {
                             margin-bottom: 70px;
                         }
-                        .swiper{
+
+                        .swiper {
                             width: 100%;
+
                             // overflow: initial;
-                            .swiper-wrapper{
+                            .swiper-wrapper {
                                 width: 100%;
-                                transition-timing-function:linear;
-                                @include flex-el-list(7,40px,10px);
+                                transition-timing-function: linear;
+                                @include flex-el-list(7, 40px, 10px);
                                 align-items: center;
                                 flex-wrap: nowrap;
-                                .swiper-slide{
-                                    .img-wrap{
+
+                                .swiper-slide {
+                                    .img-wrap {
                                         width: 100%;
                                         aspect-ratio: 15/23;
-                                        img{
+
+                                        img {
                                             @include fullsize;
                                         }
                                     }
-                                    p{
+
+                                    p {
                                         width: 100%;
                                         margin-top: 25px;
                                         font-size: 22px;
@@ -342,15 +405,18 @@ main {
                     }
                 }
             }
-            &.s05{
-                article{
+
+            &.s05 {
+                article {
                     max-width: 1700px;
-                    .wrap{
-                        .swiper{
+
+                    .wrap {
+                        .swiper {
                             width: 100%;
                             // overflow: initial;
                             position: relative;
-                            &::after{
+
+                            &::after {
                                 content: "";
                                 position: absolute;
                                 left: -50px;
@@ -361,7 +427,8 @@ main {
                                 background-color: #Fff;
                                 box-shadow: 30px 0 20px #Fff;
                             }
-                            &::before{
+
+                            &::before {
                                 content: "";
                                 position: absolute;
                                 right: -50px;
@@ -372,34 +439,40 @@ main {
                                 background-color: #Fff;
                                 box-shadow: -30px 0 20px #Fff;
                             }
-            
 
-                            .swiper-wrapper{
+
+                            .swiper-wrapper {
                                 width: 100%;
-                                transition-timing-function:linear;
-                                @include flex-el-list(3.5,15px,15px);
+                                transition-timing-function: linear;
+                                @include flex-el-list(3.5, 15px, 15px);
                                 align-items: center;
                                 flex-wrap: nowrap;
-                                .swiper-slide{
+
+                                .swiper-slide {
                                     border: 1px solid #eee;
-                                    .video-wrap{
+
+                                    .video-wrap {
                                         width: 100%;
                                         aspect-ratio: 490/335;
-                                        >*{
+
+                                        >* {
                                             @include img-cover;
                                         }
                                     }
-                                    .text{
+
+                                    .text {
                                         width: 100%;
                                         padding: 10px 30px 20px;
                                         text-align: right;
                                         font-size: 16px;
                                         font-family: "Noto Sans KR";
                                         font-weight: normal;
-                                        >*{
+
+                                        >* {
                                             font-family: inherit;
                                         }
-                                        .date{
+
+                                        .date {
                                             margin-bottom: 5px;
                                         }
                                     }
@@ -409,86 +482,104 @@ main {
                     }
                 }
             }
-            &.s06{
-                .section-bg{
+
+            &.s06 {
+                .section-bg {
                     left: -100px;
                     bottom: -80px;
                 }
-                article{
-                    .wrap{
-                        .content{
+
+                article {
+                    .wrap {
+                        .content {
                             width: 100%;
                             border-top: 1px solid #000;
                             padding-top: 50px;
                             @include flex-center-start;
                             gap: 80px;
                             font-family: "Noto Sans KR";
-                            .tit{
+
+                            .tit {
                                 width: 100%;
                                 font-size: 22px;
                                 font-weight: normal;
                                 line-height: 1.5;
                             }
-                            p{
+
+                            p {
                                 width: 100%;
                                 font-size: 15px;
                                 font-weight: normal;
                                 color: #6a6a6a;
                                 line-height: 1.5;
                             }
-                            .date{
+
+                            .date {
                                 width: 100%;
                                 font-size: 14px;
                                 font-weight: normal;
                                 color: #6a6a6a;
                             }
 
-                            .detail{
+                            .detail {
                                 width: 460px;
-                                a{
+
+                                a {
                                     display: block;
                                     width: 100%;
-                                    .img-wrap{
+
+                                    .img-wrap {
                                         width: 100%;
                                         aspect-ratio: 464/354;
                                         margin-bottom: 20px;
-                                        img{
+
+                                        img {
                                             @include img-cover;
                                         }
                                     }
-                                    .text{
+
+                                    .text {
                                         width: 100%;
-                                        .tit{
+
+                                        .tit {
                                             margin-bottom: 25px;
                                         }
-                                        p{
+
+                                        p {
                                             margin-bottom: 20px;
                                         }
                                     }
                                 }
                             }
-                            .list{
+
+                            .list {
                                 width: calc(100% - 460px - 80px);
-                                h3{
+
+                                h3 {
                                     width: 100%;
                                     font-size: 50px;
                                     margin-bottom: 60px;
                                     font-family: "Chosunilbo_myungjo";
                                     font-weight: bold;
                                 }
-                                ul{
+
+                                ul {
                                     width: 100%;
-                                    li{
+
+                                    li {
                                         width: 100%;
                                         padding: 20px 0;
                                         border-bottom: 1px solid #b3b3b3;
-                                        .tit{
+
+                                        .tit {
                                             margin-bottom: 10px;
                                         }
-                                        p{
+
+                                        p {
                                             margin-bottom: 35px;
                                         }
-                                        &:first-child{
+
+                                        &:first-child {
                                             padding-top: 0;
                                         }
                                     }
@@ -503,38 +594,587 @@ main {
 
 
     &#sub_page {
-        .sub_banner{
+        .sub_banner {
             width: 100%;
             aspect-ratio: 1920/520;
-            max-height: 500px;
+            max-height: 540px;
             min-height: 300px;
             position: relative;
             margin-top: $headerHeight;
-            .bg{
+
+            .bg {
                 position: absolute;
                 @include fullsize;
                 @include pos-center;
                 @include drag-off;
                 overflow: hidden;
-                img{
+                z-index: 1;
+
+                img {
                     @include fullsize;
                     object-fit: cover;
-                    animation: zoom-out 5s forwards
+                    animation: zoom-in 7s 0s forwards;
                 }
 
             }
+
+            .inner {
+                position: relative;
+                z-index: 2;
+                @include inner-center(1210px);
+                height: 100%;
+                @include flex-column-center;
+
+                .banner_title {
+                    width: 100%;
+                    color: #fff;
+
+                    p {
+                        width: 100%;
+                        margin-bottom: 25px;
+                        font-size: 24px;
+                        font-family: "Pretendard";
+                        font-weight: 500;
+                        opacity: 0;
+                        animation: fade-up 1s .6s forwards;
+                    }
+
+                    h2 {
+                        width: 100%;
+                        font-size: 42px;
+                        font-weight: normal;
+                        opacity: 0;
+                        animation: fade-up 1s .9s forwards;
+                    }
+                }
+            }
         }
-        &.about{
+
+        section {
+            article {
+                @include inner-center(1210px);
+            }
+        }
+
+        &.about {
             section {
-                article {
-                    @include inner-center($innerWidth);
-                    .wrap {
-                        .title {
-                            h2 {}
-                            p {}
+                &.s01 {
+                    padding-top: 150px;
+
+                    article {
+                        .wrap {
+                            .tabs {
+                                width: 100%;
+                                @include flex-center;
+                                gap: 10px 100px;
+                                margin-bottom: 120px;
+
+                                li {
+                                    font-family: "Noto Sans KR";
+                                    font-size: 30px;
+                                    color: #c7c7c7;
+                                    padding-bottom: 15px;
+
+                                    &.active {
+                                        color: #000;
+                                        border-bottom: 2px solid #000;
+                                    }
+                                }
+                            }
                         }
-                        .content{
+                    }
+                }
+            }
+
+            &.okzzoa {
+                .banner_wrap {
+                    width: 100%;
+                    margin-bottom: 100px;
+
+                    img {
+                        width: 100%;
+                        object-fit: contain;
+                    }
+                }
+
+                h3 {
+                    font-size: 32px;
+                    font-weight: bold;
+                    padding-left: 80px;
+                    white-space: nowrap;
+                }
+
+                section {
+                    &:not(.sub_banner) {
+                        padding-bottom: 150px;
+                    }
+
+                    &.s01 {
+                        padding-bottom: 180px;
+
+                        article {
+                            .wrap {
+                                .content {
+                                    width: 100%;
+
+                                    .text {
+                                        width: 100%;
+                                        display: flex;
+                                        justify-content: start;
+                                        align-items: flex-start;
+                                        gap: 80px;
+
+                                        p {
+                                            font-family: "Pretendard";
+                                            line-height: 1.6;
+                                            color: #6b6b6b;
+                                            font-size: 18px;
+                                        }
+                                    }
+                                }
+                            }
                         }
+                    }
+
+                    &.s02 {
+                        article {
+                            .wrap {
+                                h3 {
+                                    margin-bottom: 30px;
+                                }
+
+                                .contents {
+                                    width: 100%;
+                                    border: 1px solid #e8e8e8;
+
+                                    .banner_wrap {
+                                        margin-bottom: 0;
+                                    }
+
+                                    .info {
+                                        padding: 80px 100px;
+
+                                        ul {
+                                            @include flex-space-start;
+                                            gap: 130px;
+                                            text-align: center;
+
+                                            li {
+                                                @include flex-column-center;
+
+                                                .img-wrap {
+                                                    width: 190px;
+                                                    aspect-ratio: 1/1;
+                                                    border-radius: 50%;
+                                                    background-color: #f5f5f5;
+                                                    @include flex-center;
+
+                                                    img {
+                                                        width: 98px;
+                                                        object-fit: contain
+                                                    }
+                                                }
+
+                                                p {
+                                                    font-size: 28px;
+                                                    column-rule: #232323;
+                                                    margin: 40px 0 30px;
+                                                    font-weight: 600;
+                                                }
+
+                                                span {
+                                                    font-family: "Pretendard";
+                                                    line-height: 1.6;
+                                                    color: #6b6b6b;
+                                                    font-size: 18px;
+                                                }
+
+                                                &:last-child {
+                                                    .img-wrap {
+                                                        img {
+                                                            width: 74px;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.s03 {
+                        article {
+                            .wrap {
+                                h3 {
+                                    margin-bottom: 60px;
+                                }
+
+                                .contents {
+                                    width: 100%;
+                                    padding-left: 80px;
+
+                                    ul {
+                                        width: 100%;
+                                        @include flex-column;
+                                        gap: 100px;
+
+                                        li {
+                                            width: 100%;
+                                            display: flex;
+                                            justify-content: flex-start;
+                                            align-items: center;
+                                            gap: 60px;
+
+                                            .img-wrap {
+                                                width: 385px;
+                                                aspect-ratio: 385/296;
+
+                                                img {
+                                                    @include img-cover;
+                                                }
+                                            }
+
+                                            .text {
+                                                h4 {
+                                                    font-size: 52px;
+                                                    font-family: "Montserrat";
+                                                    font-weight: 600;
+                                                }
+
+                                                p {
+                                                    font-size: 28px;
+                                                    margin: 40px 0 20px;
+                                                }
+
+                                                span {
+                                                    font-family: "Pretendard";
+                                                    line-height: 1.6;
+                                                    color: #6b6b6b;
+                                                    font-size: 18px;
+                                                }
+                                            }
+
+                                            &:nth-of-type(2n) {
+                                                text-align: right;
+                                                flex-direction: row-reverse
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.history {
+                section {
+                    &.s01 {
+                        padding-bottom: 150px;
+
+                        article {
+                            .wrap {
+                                .content {
+                                    .banner_wrap {
+                                        width: 100%;
+
+                                        img {
+                                            width: 100%;
+                                            object-fit: contain;
+                                        }
+                                    }
+
+                                    .center {
+                                        padding: 100px 30px 80px;
+                                        @include flex-space-end;
+                                        gap: 200px;
+
+                                        .logo {
+                                            width: 350px;
+
+                                            img {
+                                                width: 100%;
+                                                object-fit: contain;
+                                            }
+                                        }
+
+                                        .info {
+                                            width: calc(100% - 350px - 200px);
+
+                                            .his_wrap {
+                                                width: 100%;
+                                                margin-bottom: 100px;
+
+                                                .year {
+                                                    font-size: 32px;
+                                                    font-weight: bold;
+                                                    margin-bottom: 40px;
+                                                }
+
+                                                >ul {
+                                                    width: 100%;
+
+                                                    >li {
+                                                        width: 100%;
+                                                        display: flex;
+                                                        justify-content: flex-start;
+                                                        align-items: flex-start;
+                                                        gap: 20px;
+                                                        font-size: 18px;
+                                                        font-family: "Pretendard";
+                                                        line-height: 1.5;
+                                                        margin-bottom: 10px;
+
+                                                        .month {
+                                                            font-weight: bold;
+                                                            color: #000;
+                                                        }
+
+                                                        ul {
+                                                            font-weight: normal;
+                                                            color: #6b6b6b;
+                                                        }
+
+                                                        &:last-child {
+                                                            margin-bottom: 0;
+                                                        }
+                                                    }
+                                                }
+
+                                                &:last-child {
+                                                    margin-bottom: 0
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    .bottom {
+                                        width: 100%;
+                                        height: 300px;
+                                        display: flex;
+                                        justify-content: flex-start;
+                                        align-items: center;
+                                        gap: 10px;
+
+                                        .img-wrap {
+                                            width: calc((100% - 270px) / 2 - 5px);
+                                            height: 100%;
+
+                                            img {
+                                                @include img-cover;
+                                            }
+
+                                            &:nth-child(3) {
+                                                width: auto;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.organization {
+                section {
+                    &.s01 {
+                        padding-bottom: 150px;
+
+                        article {
+                            .wrap {
+                                .contents {
+                                    width: 100%;
+
+                                    h3 {
+                                        width: 100%;
+                                        font-size: 32px;
+                                        font-weight: bold;
+                                        text-align: center;
+
+                                        &.bg {
+                                            padding: 70px 0;
+                                            background-color: rgba($color: #eee, $alpha: .3);
+                                        }
+                                    }
+
+                                    .graph {
+                                        width: 100%;
+                                        margin-bottom: 180px;
+
+                                        >div {
+                                            width: 100%;
+
+                                            img {
+                                                width: 100%;
+                                                object-fit: contain
+                                            }
+
+                                            &.mo_img {
+                                                display: none
+                                            }
+                                        }
+                                    }
+
+                                    .list-wrap {
+                                        h3 {
+                                            margin-bottom: 60px;
+                                        }
+
+                                        ul {
+                                            @include flex-el-list(7, 30px, 70px);
+
+                                            li {
+                                                .img-wrap {
+                                                    width: 100%;
+                                                    margin-bottom: 10px;
+
+                                                    img {
+                                                        width: 100%;
+                                                        object-fit: contain;
+                                                    }
+                                                }
+
+                                                p {
+                                                    font-size: 16px;
+                                                    font-family: "Noto Sans KR";
+                                                    font-weight: 500;
+                                                    text-align: center
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.ci {
+                section {
+                    &:not(.sub_banner) {
+                        padding-bottom: 150px;
+                    }
+                    article {
+                        .wrap {
+                            .contents {
+                                width: 100%;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: flex-start;
+                                gap: 100px;
+                                h3 {
+                                    width: 320px;
+                                    min-width: 320px;
+                                    font-size: 32px;
+                                    font-weight: bold;
+                                }
+
+                                .right {
+                                    width: 100%;
+                                    font-family: "Pretendard";
+                                    font-weight: normal;
+
+                                    p {
+                                        width: 100%;
+                                        font-size: 18px;
+                                        color: #6b6b6b;
+                                        margin-bottom: 60px;
+                                        white-space: nowrap;
+                                    }
+
+                                    .box {
+                                        width: 100%;
+                                        margin-bottom: 30px;
+                                        border: 1px solid #eee;
+                                        padding: 35px 40px;
+                                        display: flex;
+                                        justify-content: flex-start;
+                                        align-items: flex-start;
+
+                                        h4 {
+                                            font-size: 22px;
+                                            color: #000;
+                                        }
+
+                                        &:last-child {
+                                            margin-bottom: 0
+                                        }
+
+                                        &:nth-of-type(1) {
+                                            .img-wrap {
+                                                width: 100%;
+                                                @include flex-center;
+
+                                                img {
+                                                    width: 250px;
+                                                    object-fit: contain
+                                                }
+                                            }
+                                        }
+
+                                        &:nth-of-type(2) {
+                                            .img-wrap {
+                                                width: 100%;
+                                                @include flex-center;
+                                                gap: 40px;
+
+                                                img {
+                                                    object-fit: contain;
+
+                                                    &:nth-child(1) {
+                                                        width: 210px;
+                                                    }
+
+                                                    &:nth-child(2) {
+                                                        width: 310px;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    .color_list{
+                                        width: 100%;
+                                        @include flex-center;
+                                        gap: 30px;
+                                        li{
+                                            width: 100%;
+                                            .color_box{
+                                                width: 100%;
+                                                aspect-ratio: 223/165;
+                                                margin-bottom: 20px;
+                                            }
+                                            span{
+                                                font-size: 18px;
+                                                color: #6b6b6b;
+                                                line-height: 1.6;
+                                            }
+                                            &:nth-child(1){
+                                                .color_box{
+                                                    background-color: #f8a82a;
+                                                }
+                                            }
+                                            &:nth-child(2){
+                                                .color_box{
+                                                    background-color: #c3d600;
+                                                }
+                                            }
+                                            &:nth-child(3){
+                                                .color_box{
+                                                    background-color: #de3186;
+                                                }
+                                            }
+                                        }
+                                    }
+    
+                                }
+                            }
+                        }
+
                     }
                 }
             }
