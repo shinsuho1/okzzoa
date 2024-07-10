@@ -7,12 +7,32 @@ $innerWidth: 1360px;
 main {
     section {
         width: 100%;
-
         article {
             width: 100%;
 
             .wrap {
                 width: 100%;
+            }
+        }
+    }
+
+    .splitText{
+        .spt {
+        display: inline-block;
+            opacity: 0;
+            transform: translateY(20px);
+            min-width: 10px;
+            @include transition(all 0.4s);
+            @for $i from 1 to 100{
+                &:nth-of-type(#{$i}){
+                    transition-delay: calc($i / 25 + .5) + s;
+                }
+            }
+        }
+        &.aos-animate{
+            .spt {
+                opacity: 1;
+                transform: translateY(0px);
             }
         }
     }
@@ -26,7 +46,7 @@ main {
                 .section-bg {
                     position: absolute;
                     width: 960px;
-                    aspect-ratio: 961/815;
+                    aspect-ratio: 500/311;
                     z-index: -1;
 
                     img {
@@ -49,16 +69,6 @@ main {
 
                                 img {
                                     @include img-cover;
-                                }
-                            }
-
-                            .split-title,
-                            .split-sub-title {
-                                span {
-                                    display: inline-block;
-                                    opacity: 0;
-                                    transform: translateY(20px);
-                                    min-width: 10px;
                                 }
                             }
 
@@ -360,7 +370,7 @@ main {
 
             &.s04 {
                 background-color: #f0f0f0;
-
+                overflow-x: hidden;
                 article {
                     max-width: 1700px;
 
@@ -407,6 +417,7 @@ main {
             }
 
             &.s05 {
+                overflow-x: hidden;
                 article {
                     max-width: 1700px;
 
@@ -635,16 +646,31 @@ main {
                         font-size: 24px;
                         font-family: "Pretendard";
                         font-weight: 500;
-                        opacity: 0;
-                        animation: fade-up 1s .6s forwards;
+                        position: relative;
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        gap: 30px;
+                        .line{
+                            display: inline-block;
+                            max-width: 250px;
+                            width: 0%;
+                            height: 1px;
+                            background-color: #fff;
+                            opacity: .3;
+                            @include transition(5s 1s);
+                        }
+                        &.aos-animate{
+                            .line{
+                                width: 100%;
+                            }
+                        }
                     }
 
                     h2 {
                         width: 100%;
                         font-size: 42px;
                         font-weight: normal;
-                        opacity: 0;
-                        animation: fade-up 1s .9s forwards;
                     }
                 }
             }
@@ -653,6 +679,27 @@ main {
         section {
             article {
                 @include inner-center(1210px);
+            }
+            &.s01{
+                .tabs {
+                    width: 100%;
+                    @include flex-center;
+                    gap: 10px 100px;
+                    margin-bottom: 120px;
+
+                    li {
+                        font-family: "Noto Sans KR";
+                        font-size: 30px;
+                        color: #c7c7c7;
+                        padding-bottom: 15px;
+
+                        &.active {
+                            color: #000;
+                            border-bottom: 2px solid #000;
+                        }
+                    }
+                }
+
             }
         }
 
@@ -663,24 +710,6 @@ main {
 
                     article {
                         .wrap {
-                            .tabs {
-                                width: 100%;
-                                @include flex-center;
-                                gap: 10px 100px;
-                                margin-bottom: 120px;
-
-                                li {
-                                    font-family: "Noto Sans KR";
-                                    font-size: 30px;
-                                    color: #c7c7c7;
-                                    padding-bottom: 15px;
-
-                                    &.active {
-                                        color: #000;
-                                        border-bottom: 2px solid #000;
-                                    }
-                                }
-                            }
                         }
                     }
                 }
@@ -720,7 +749,7 @@ main {
                                     .text {
                                         width: 100%;
                                         display: flex;
-                                        justify-content: start;
+                                        justify-content: flex-start;
                                         align-items: flex-start;
                                         gap: 80px;
 
@@ -1077,13 +1106,11 @@ main {
                                     width: 100%;
                                     font-family: "Pretendard";
                                     font-weight: normal;
-
                                     p {
                                         width: 100%;
                                         font-size: 18px;
                                         color: #6b6b6b;
                                         margin-bottom: 60px;
-                                        white-space: nowrap;
                                     }
 
                                     .box {
@@ -1103,6 +1130,9 @@ main {
                                         &:last-child {
                                             margin-bottom: 0
                                         }
+                                        img{
+                                            object-fit: contain
+                                        }
 
                                         &:nth-of-type(1) {
                                             .img-wrap {
@@ -1111,7 +1141,6 @@ main {
 
                                                 img {
                                                     width: 250px;
-                                                    object-fit: contain
                                                 }
                                             }
                                         }
@@ -1121,10 +1150,7 @@ main {
                                                 width: 100%;
                                                 @include flex-center;
                                                 gap: 40px;
-
                                                 img {
-                                                    object-fit: contain;
-
                                                     &:nth-child(1) {
                                                         width: 210px;
                                                     }
@@ -1175,6 +1201,454 @@ main {
                             }
                         }
 
+                    }
+                }
+            }
+        }
+
+        &.sponsor{
+            .sub_banner{
+                .inner{
+                    .banner_title{
+                        p{
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+            section{
+                &:not(.sub_banner){
+                    padding-top: 150px;
+                }
+
+                &.s01{
+                    article{
+                        max-width: initial;
+                        .wrap{
+                            .contents{
+                                width: 100%;
+                                // fafafa
+                                background-color: #fafafa;
+                                margin-top: 200px;
+                                padding-bottom: 150px;
+                                @include flex-column-center;
+                                .info{
+                                    max-width: 1210px;
+                                    width: 100%;
+                                    position: relative;
+                                    .banner{
+                                        width: 100%;
+                                        aspect-ratio: 40/13;
+                                        transform: translateY(-100px);
+                                        min-height: 250px;
+                                        img{
+                                            @include img-cover;
+                                        }
+                                    }
+                                    .text{
+                                        width: 670px;
+                                        position: absolute;
+                                        padding: 100px 70px;
+                                        @include flex-column-center;
+                                        bottom: -150px;
+                                        left: 0;
+                                        background-color: #fafafa;
+                                        .fs-32{
+                                            width: 100%;
+                                            margin-bottom: 40px;
+                                        }
+                                        p{
+                                            width: 100%;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .button{
+                    max-width: 260px;
+                    width: 100%;
+                    padding: 15px 0;
+                    border-radius: 10px;
+                    background-color: #e31c93;
+                    font-size: 23px;
+                    color: #fff;
+                    font-weight: normal;
+                    line-height: 1;
+                    a{
+                        @include flex-center;
+                        @include fullsize;
+                    }
+                }
+
+                
+            }
+            &.rd{
+                section{
+                    &.s01{
+                        p{
+                            width: 100%;
+                            font-family: "Pretendard";
+                            font-size: 18px;
+                            font-weight: normal;
+                            color: #6b6b6b;
+                        }
+        
+                    }
+                    &.s02{
+                        padding-bottom: 150px;
+                        article{
+                            .wrap{
+                                ul{
+                                    width: 100%;
+                                    gap: 120px;
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: flex-start;
+                                    margin-top: 40px;
+                                    li{
+                                        width: 100%;
+                                        @include flex-column-center;
+                                        .img-wrap{
+                                            width: 100%;
+                                            aspect-ratio: 268/149;
+                                            img{
+                                                @include img-cover;
+                                            }
+                                        }
+                                        .text{
+                                            width: 100%;
+                                            padding: 40px 20px;
+                                            @include flex-column-center;
+                                            text-align: center;
+                                            .fs-32{
+                                                width: 100%;
+                                            }
+                                            p{
+                                                width: 100%;
+                                                margin-top: 20px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &.corporate{
+                section{
+                    .fs-32{
+                        margin-bottom: 30px;
+                    }
+                    &.s01{
+                        article{
+                            .contents{
+                                padding-bottom: 60px;
+                                .info{  
+                                    .text{
+                                        bottom: -60px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &.s02{
+                        article{
+                            .wrap{
+                                .title{
+                                    padding-left: 70px;
+                                    .fs-32{
+                                        &:nth-of-type(2){
+                                            margin: 50px 0 30px;
+                                        }
+                                        p{
+                                            font-size: 18px;
+                                            font-family: "Pretendard";
+                                            color: #6b6b6b;
+                                        }
+                                    }
+                                }
+                                .banner{
+                                    width: 100%;
+                                    @include flex-center;
+                                    gap: 1px;
+                                    margin: 80px 0;
+                                    .img-wrap{
+                                        width: 100%;
+                                        aspect-ratio: 599/324;
+                                        img{
+                                            @include img-cover;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &.s03{
+                        article{
+                            .wrap{
+                                padding-left: 70px;
+                                ul{
+                                    width: 100%;
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: flex-start;
+                                    gap: 10px;
+                                    margin-bottom: 100px;
+                                    li{
+                                        width: 100%;
+                                        @include flex-column-center;
+                                        gap: 25px;
+                                        text-align: center;
+                                        padding: 50px 10px;
+                                        background-color: #f9f9f9;
+                                        .icon-wrap{
+                                            height: 60px;
+                                            img{
+                                                height: 100%;
+                                                object-fit: contain;
+                                            }
+                                        }
+                                        p{
+                                            font-size: 20px;
+                                            font-weight: bold;
+                                            color: #000;
+                                        }
+                                        span{
+                                            font-size: 16px;
+                                            font-family: "Pretendard";
+                                            font-weight: normal;
+                                        }
+                                    }
+                                }
+                                .graph{
+                                    width: 100%;
+                                    img{
+                                        width: 100%;
+                                        object-fit: contain;
+                                        &.pc_img{
+                                            display: block;
+                                        }
+                                        &.mo_img{
+                                            display: none;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &.s04{
+                        padding-bottom: 150px;
+                        article{
+                            .wrap{
+                                @include flex-column-center;
+                                .fs-32{
+                                    width: 100%;
+                                }
+                                ul{
+                                    width: 100%;
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: flex-start;
+                                    gap: 60px;
+                                    margin-bottom: 60px;
+                                    li{
+                                        width: 100%;
+                                        .top{
+                                            width: 100%;
+                                            border-radius: 10px 10px 0 0;
+                                            color: #fff;
+                                            text-align: center;
+                                            line-height: 1;
+                                            font-size: 22px;
+                                            padding: 20px 0;
+                                        }
+                                        &:nth-of-type(1){
+                                            .top{
+                                                background-color: #f8b500;
+                                            }
+                                        }
+                                        &:nth-of-type(2){
+                                            .top{
+                                                background-color: #c3d600;
+                                            }
+                                        }
+                                        &:nth-of-type(3){
+                                            .top{
+                                                background-color: #f8b500;
+                                            }
+                                        }
+                                        .img-wrap{
+                                            width: 100%;
+                                            aspect-ratio: 358/261;
+                                            img{
+                                                @include img-cover;
+                                            }
+                                        }
+                                        p{
+                                            padding: 40px 10px 0;
+                                            text-align: center;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &.list{
+                section{
+                    &.s02{
+                        article{
+                            .wrap{
+                                .table-tab{
+                                    width: 100%;
+                                    margin-bottom: 20px;
+                                    ul{
+                                        width: 100%;
+                                        @include flex-el-list(4,3px,0px);
+                                        text-align: center;
+                                        li{
+                                            font-size: 20px;
+                                            font-family: "Pretendard";
+                                            border-radius: 10px 10px 0 0;
+                                            font-weight: 400;
+                                            background-color: #f2f2f2;
+                                            color: #000;
+                                            a{
+                                                padding: 15px 0;
+                                                @include fullsize;
+                                                @include flex-center;
+                                            }
+                                            &.active{
+                                                background-color: #f8b500;
+                                                color: #fff;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .table-wrap{
+            width: 100%;
+            font-family: "Pretendard";
+            padding-bottom: 150px;
+            .search-wrap{
+                width: 100%;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                height: 40px;
+                margin-bottom: 20px;
+                form{
+                    height: 100%;
+                    label{
+                        height: 100%;
+                        @include flex-center;
+                        gap: 5px;
+                        input{
+                            width: 190px;
+                            min-width: 190px;
+                            height: 100%;
+                            padding: 0 10px;
+                            border: 1px solid #ddd;
+                            border-radius: 5px
+                        }
+                        a{
+                            @include flex-center;
+                            padding: 0 25px;
+                            color: #fff;
+                            font-size: 18px;
+                            font-weight: normal;
+                            background-color: #9b9b9b;
+                            border-radius: 5px;
+                            height: 100%;
+                            @include transition(.3s);
+                            line-height: 1;
+                            &:hover{
+                                background-color: #f8b500;
+                            }
+                        }
+                    }
+                }
+            }
+            table{
+                width: 100%;
+                border-top: 1px solid #000;
+                margin-bottom: 60px;
+                thead,tbody{
+                    width: 100%;
+                    text-align: center;
+                    tr{
+                        border-bottom: 1px solid #ddd;
+                        td,th{
+                            font-size: 18px;
+                            padding: 20px 5px;
+                        }
+                    }
+                    .ellipsis_line1{
+                        text-align: left;
+                        @include transition(.15);
+                        &:hover{
+                            color: #f8a82a;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+            .pagination{
+                width: 100%;
+                @include flex-center;
+                gap: 5px;
+                height: 20px;
+                a{
+                    @include transition(.2s);
+                    line-height: 1;
+                    font-size: 16px;
+                    color: #000;
+                }
+                .arrow{
+                    @include flex-center;
+                    width: 20px;
+                    aspect-ratio: 1/1;
+                    @include bg-cover("../images/common/pagination_arrow.svg");
+                    &:hover{
+                        background-image: url(../images/common/pagination_arrow_hover.svg);
+                    }
+                    &.prev{
+                        transform: scaleX(-1);
+                    }
+                }
+                .page{
+                    @include flex-center;
+                    a{
+                        position: relative;
+                        padding: 0 10px;
+                        &::after{
+                            content: "";
+                            width: 1px;
+                            height: 90%;
+                            position: absolute;
+                            top: 50%;
+                            right: 0;
+                            transform: translateY(-50%);
+                            background-color: #000;
+                        }
+                        &:nth-last-of-type(1){
+                            &::after{
+                                display: none;
+                            }
+                        }
+                        &:hover{
+                            color: #f8a82a;
+                        }
                     }
                 }
             }

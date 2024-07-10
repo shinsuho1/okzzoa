@@ -37,8 +37,15 @@ window.addEventListener("DOMContentLoaded",function(){
     });
 
     $("#tabmenu .menu .slide").off("click").click(function(e){
-        $(this).parent().toggleClass("active");
+        $("#tabmenu .menu").removeClass("active");
+        $("#tabmenu .menu .slide ul").stop().slideUp();
+
         $(this).children("ul").stop().slideToggle();
+        if(!$(this).parent().hasClass("active")){
+            $(this).parent().addClass("active");
+        }else{
+            $(this).parent().removeClass("active");
+        }
     });
 
     if(window.scrollY <= 0){
@@ -200,51 +207,3 @@ if (form) {
         form.submit();
     });
 }
-
-// let t = [],
-//     u = [],
-//     e = document.querySelector(".split-title").textContent.trim(),
-//     s = document.querySelector(".split-sub-title").textContent.trim();
-
-// for(let i = 0; i <= e.length ; i++){
-//     if(e[i] != undefined){
-//         t.push(e[i]);
-//     }
-// }
-
-// for(let i = 0 ; i <= s.length;i++){
-//     if(s[i] != undefined){
-//         u.push(s[i]);
-//     }
-// }
-
-
-// document.querySelector(".split-title").textContent = "";
-// document.querySelector(".split-sub-title").textContent = "";
-
-
-
-// t.forEach(function(el,index){
-//     document.querySelector(".split-title").innerHTML += `<span>${el}</span>`;
-// });
-// u.forEach(function(el,index){
-//     document.querySelector(".split-sub-title").innerHTML += `<span>${el}</span>`;
-// });
-
-
-// let se = 0;
-// setTimeout(() => {
-//     document.querySelectorAll(".split-title span").forEach((el,index)=>{
-//         el.style.transition = `all 1s ${index / 20}s`;
-//         el.style.opacity = "1";
-//         el.style.transform = `translateY(0)`;
-//         se = index / 20;
-//     })
-//     setTimeout(() => {
-//         document.querySelectorAll(".split-sub-title span").forEach((el,index)=>{
-//             el.style.transition = `all 1s ${index / 20}s`;
-//             el.style.opacity = "1";
-//             el.style.transform = `translateY(0)`;
-//         });
-//     }, se * 1000);
-// }, 1000);

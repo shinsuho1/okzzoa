@@ -284,8 +284,8 @@
 
 
 /* ================================ FONT ================================ */
-@mixin fs-20{
-    font-size: 20px;
+@mixin fs-32{
+    font-size: 32px;
 }
 /* ================================ KEYFRAMES ================================ */
 
@@ -521,6 +521,11 @@ body {
 }
 .ellipsis_line3{
     @include ellipsis(3);
+}
+
+.fs-32{
+    font-size: 32px;
+    font-weight: bold;
 }
 
 .aos-span{
