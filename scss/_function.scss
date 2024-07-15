@@ -370,19 +370,23 @@ section {
 
 * {
     /* Scrollbar */
-    // &::-webkit-scrollbar {
-    //     width: 5px;
-    //     height: 5px;
-    // }
+    &::-webkit-scrollbar {
+        width: 3px;
+        height: 5px;
+    }
 
-    // &::-webkit-scrollbar-thumb {
-    //     background-color: #aaa;
-    //     border-radius: 5px;
-    // }
+    &::-webkit-scrollbar-thumb {
+        background-color: #c3d600;
+        // background-color: #c3d600;
+        // background-color: #e31c93;
+        // background-color: #f8a82a;
 
-    // &::-webkit-scrollbar-track {
-    //     background-color: transparent;
-    // }
+        border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
 
 
     /* Darg */
