@@ -24,7 +24,7 @@ $PAGE_CODE_2 = "0301";
                     <li><a href="../sponsor/list.html">후원내역</a></li>
                 </ul>
                 <div class="contents">
-                    <div class="info">
+                    <div class="info" data-aos="fade-up">
                         <div class="banner">
                             <img src="../images/sponsor/rd01.png" alt="따뜻한 온기가 필요한 사회적 약자들을 위한 후원">
                         </div>
@@ -47,9 +47,9 @@ $PAGE_CODE_2 = "0301";
     <section class="s02">
         <article>
             <div class="wrap">
-                <div class="fs-32">후원 종류</div>
+                <div class="fs-32" data-aos="fade-up">후원 종류</div>
                 <ul>
-                    <li>
+                    <li data-aos="fade-up">
                         <div class="img-wrap">
                             <img src="../images/sponsor/rd02.png" alt="정기후원">
                         </div>
@@ -62,7 +62,7 @@ $PAGE_CODE_2 = "0301";
                         </div>
                         <div class="button"><a href="javascript:alert('준비중입니다')">정기후원하러 가기</a></div>
                     </li>
-                    <li>
+                    <li data-aos="fade-up">
                         <div class="img-wrap"><img src="../images/sponsor/rd03.png" alt="일시후원"></div>
                         <div class="text">
                             <div class="fs-32">일시후원</div>
@@ -78,6 +78,11 @@ $PAGE_CODE_2 = "0301";
         </article>
     </section>
 </main>
+
+<?php 
+    include_once "../include/contact_popup.html"
+?>
+
 
 <?php
 include_once "../include/footer.html"

@@ -7,6 +7,7 @@ $innerWidth: 1360px;
 main {
     section {
         width: 100%;
+
         article {
             width: 100%;
 
@@ -16,20 +17,22 @@ main {
         }
     }
 
-    .splitText{
+    .splitText {
         .spt {
-        display: inline-block;
+            display: inline-block;
             opacity: 0;
             transform: translateY(20px);
             min-width: 10px;
             @include transition(all 0.4s);
-            @for $i from 1 to 100{
-                &:nth-of-type(#{$i}){
+
+            @for $i from 1 to 100 {
+                &:nth-of-type(#{$i}) {
                     transition-delay: calc($i / 25 + .5) + s;
                 }
             }
         }
-        &.aos-animate{
+
+        &.aos-animate {
             .spt {
                 opacity: 1;
                 transform: translateY(0px);
@@ -42,6 +45,7 @@ main {
             &:not(.s01) {
                 padding: 150px 0;
                 position: relative;
+                overflow-y: hidden;
 
                 .section-bg {
                     position: absolute;
@@ -179,7 +183,8 @@ main {
             &.s02 {
                 padding-bottom: 0;
                 @include bg-cover("../images/main/s02_bg.png");
-                max-height: 120vh;
+                height: 1500px;
+                max-height: 1500px;
                 overflow: hidden;
 
                 article {
@@ -217,6 +222,7 @@ main {
 
                                 &.right {
                                     align-items: flex-end;
+                                    text-align: right;
                                 }
 
                                 &:nth-of-type(3) {
@@ -371,6 +377,7 @@ main {
             &.s04 {
                 background-color: #f0f0f0;
                 overflow-x: hidden;
+
                 article {
                     max-width: 1700px;
 
@@ -418,6 +425,7 @@ main {
 
             &.s05 {
                 overflow-x: hidden;
+
                 article {
                     max-width: 1700px;
 
@@ -495,6 +503,8 @@ main {
             }
 
             &.s06 {
+                padding-top: 0 !important;
+
                 .section-bg {
                     left: -100px;
                     bottom: -80px;
@@ -651,7 +661,8 @@ main {
                         justify-content: flex-start;
                         align-items: center;
                         gap: 30px;
-                        .line{
+
+                        .line {
                             display: inline-block;
                             max-width: 300px;
                             width: 0%;
@@ -660,8 +671,9 @@ main {
                             opacity: .3;
                             @include transition(7s 1s);
                         }
-                        &.aos-animate{
-                            .line{
+
+                        &.aos-animate {
+                            .line {
                                 width: 100%;
                             }
                         }
@@ -671,7 +683,8 @@ main {
                         width: 100%;
                         font-size: 42px;
                         font-weight: normal;
-                        br{
+
+                        br {
                             display: none;
                         }
                     }
@@ -683,7 +696,8 @@ main {
             article {
                 @include inner-center(1210px);
             }
-            &.s01{
+
+            &.s01 {
                 .tabs {
                     width: 100%;
                     @include flex-center;
@@ -712,8 +726,7 @@ main {
                     padding-top: 150px;
 
                     article {
-                        .wrap {
-                        }
+                        .wrap {}
                     }
                 }
             }
@@ -982,28 +995,33 @@ main {
                                         }
                                     }
 
-                                    .swiper{
+                                    .swiper {
                                         width: 100%;
                                         height: 300px;
-                                        .swiper-wrapper{
+
+                                        .swiper-wrapper {
                                             @include fullsize;
                                             @include flex-start-center;
+
                                             // gap: 10px;
-                                            .swiper-slide{
+                                            .swiper-slide {
                                                 width: calc(100% / 2.6);
                                                 margin-right: 10px;
-                                                img{
+
+                                                img {
                                                     width: 100%;
                                                     height: 100%;
                                                     object-fit: cover;
                                                 }
-                                                &.s_size{
+
+                                                &.s_size {
                                                     width: auto;
                                                 }
-                                                &:nth-last-of-type(1){
+
+                                                &:nth-last-of-type(1) {
                                                     margin-right: 0;
                                                 }
-                                            }    
+                                            }
                                         }
                                     }
                                 }
@@ -1093,6 +1111,7 @@ main {
                     &:not(.sub_banner) {
                         padding-bottom: 150px;
                     }
+
                     article {
                         .wrap {
                             .contents {
@@ -1101,6 +1120,7 @@ main {
                                 justify-content: space-between;
                                 align-items: flex-start;
                                 gap: 100px;
+
                                 h3 {
                                     width: 320px;
                                     min-width: 320px;
@@ -1112,6 +1132,7 @@ main {
                                     width: 100%;
                                     font-family: "Pretendard";
                                     font-weight: normal;
+
                                     p {
                                         width: 100%;
                                         font-size: 18px;
@@ -1136,7 +1157,8 @@ main {
                                         &:last-child {
                                             margin-bottom: 0
                                         }
-                                        img{
+
+                                        img {
                                             object-fit: contain
                                         }
 
@@ -1156,6 +1178,7 @@ main {
                                                 width: 100%;
                                                 @include flex-center;
                                                 gap: 40px;
+
                                                 img {
                                                     &:nth-child(1) {
                                                         width: 210px;
@@ -1169,40 +1192,46 @@ main {
                                         }
                                     }
 
-                                    .color_list{
+                                    .color_list {
                                         width: 100%;
                                         @include flex-center;
                                         gap: 30px;
-                                        li{
+
+                                        li {
                                             width: 100%;
-                                            .color_box{
+
+                                            .color_box {
                                                 width: 100%;
                                                 aspect-ratio: 223/165;
                                                 margin-bottom: 20px;
                                             }
-                                            span{
+
+                                            span {
                                                 font-size: 18px;
                                                 color: #6b6b6b;
                                                 line-height: 1.6;
                                             }
-                                            &:nth-child(1){
-                                                .color_box{
+
+                                            &:nth-child(1) {
+                                                .color_box {
                                                     background-color: #f8a82a;
                                                 }
                                             }
-                                            &:nth-child(2){
-                                                .color_box{
+
+                                            &:nth-child(2) {
+                                                .color_box {
                                                     background-color: #c3d600;
                                                 }
                                             }
-                                            &:nth-child(3){
-                                                .color_box{
+
+                                            &:nth-child(3) {
+                                                .color_box {
                                                     background-color: #de3186;
                                                 }
                                             }
                                         }
                                     }
-    
+
                                 }
                             }
                         }
@@ -1212,36 +1241,44 @@ main {
             }
         }
 
-        &.action{
-            &.domestic,&.overseas{
-                section{
-                    &.s01{
+        &.action {
+
+            &.domestic,
+            &.overseas {
+                section {
+                    &.s01 {
                         padding-top: 150px;
-                        article{
+
+                        article {
                             max-width: initial;
-                            .wrap{
-                                .contents{
+
+                            .wrap {
+                                .contents {
                                     width: 100%;
                                     // fafafa
                                     background-color: #fafafa;
                                     margin-top: 200px;
                                     padding-bottom: 0;
                                     @include flex-column-center;
-                                    .info{
+
+                                    .info {
                                         max-width: 1210px;
                                         width: 100%;
                                         padding-bottom: 30px;
                                         position: relative;
-                                        .banner{
+
+                                        .banner {
                                             width: 100%;
                                             aspect-ratio: 40/13;
                                             transform: translateY(-100px);
                                             min-height: 250px;
-                                            img{
+
+                                            img {
                                                 @include img-cover;
                                             }
                                         }
-                                        .text{
+
+                                        .text {
                                             width: 670px;
                                             position: absolute;
                                             padding: 50px 70px;
@@ -1249,15 +1286,19 @@ main {
                                             bottom: 30px;
                                             left: 0;
                                             background-color: #fafafa;
-                                            .fs-32{
+                                            text-align: left;
+
+                                            .fs-32 {
                                                 width: 100%;
                                                 margin-bottom: 40px;
                                             }
-                                            p{
+
+                                            p {
                                                 font-size: 18px;
                                                 font-weight: normal;
                                                 font-family: "Pretendard";
                                                 color: #6b6b6b;
+                                                width: 100%;
                                             }
                                         }
                                     }
@@ -1265,43 +1306,53 @@ main {
                             }
                         }
                     }
-                    &.s02{
+
+                    &.s02 {
                         padding: 150px 0;
-                        article{
-                            .wrap{
-                                >.fs-32{
+
+                        article {
+                            .wrap {
+                                >.fs-32 {
                                     width: 100%;
                                     margin-bottom: 70px;
                                 }
-                                ul{
+
+                                ul {
                                     width: 100%;
-                                    li{
+
+                                    li {
                                         width: 100%;
                                         display: flex;
                                         justify-content: flex-start;
                                         align-items: flex-end;
                                         gap: 80px;
                                         margin-bottom: 100px;
-                                        .img-wrap{
+
+                                        .img-wrap {
                                             max-width: 500px;
                                             width: 100%;
                                             aspect-ratio: 500/250;
-                                            img{
+
+                                            img {
                                                 @include img-cover;
                                             }
                                         }
-                                        .text{
-                                            .logo{
+
+                                        .text {
+                                            .logo {
                                                 width: 43px;
                                                 aspect-ratio: 43/25;
-                                                img{
+
+                                                img {
                                                     @include img-cover;
                                                 }
                                             }
-                                            .fs-32{
+
+                                            .fs-32 {
                                                 margin: 10px 0 30px;
                                             }
-                                            p{
+
+                                            p {
                                                 font-size: 18px;
                                                 font-weight: normal;
                                                 color: #6b6b6b;
@@ -1309,17 +1360,20 @@ main {
                                                 font-family: "Pretendard";
                                             }
                                         }
-                                        &:nth-of-type(2n){
+
+                                        &:nth-of-type(2n) {
                                             flex-direction: row-reverse;
                                             text-align: right;
-                                            .text{
+
+                                            .text {
                                                 display: flex;
                                                 flex-direction: column;
                                                 align-items: flex-end;
                                                 justify-content: flex-end;
                                             }
                                         }
-                                        &:nth-last-of-type(1){
+
+                                        &:nth-last-of-type(1) {
                                             margin-bottom: 0;
                                         }
                                     }
@@ -1329,45 +1383,56 @@ main {
                     }
                 }
             }
-            &.review{
-                section{
-                    &.s01{
+
+            &.review {
+                section {
+                    &.s01 {
                         padding: 150px 0 100px;
-                        article{
-                            .wrap{
-                                .title_wrap{
+
+                        article {
+                            .wrap {
+                                .title_wrap {
                                     width: 100%;
                                     margin-bottom: 100px;
-                                    .fs-32{
+
+                                    .fs-32 {
                                         margin-bottom: 20px;
                                     }
-                                    p{
+
+                                    p {
                                         font-size: 18px;
                                         font-weight: normal;
                                         font-family: "Pretendard";
                                         color: #6b6b6b;
                                     }
                                 }
-                                .contents{
+
+                                .contents {
                                     width: 100%;
-                                    ul{
+
+                                    ul {
                                         width: 100%;
-                                        @include flex-el-list(3,80px,100px);
+                                        @include flex-el-list(3, 80px, 100px);
                                         margin-bottom: 100px;
                                         position: relative;
-                                        li{
+
+                                        li {
                                             position: initial;
-                                            a{
+
+                                            a {
                                                 @include flex-column;
                                                 width: 100%;
-                                                .img-wrap{
+
+                                                .img-wrap {
                                                     width: 100%;
                                                     aspect-ratio: 730/497;
-                                                    img{
+
+                                                    img {
                                                         @include img-cover;
                                                     }
                                                 }
-                                                p{
+
+                                                p {
                                                     font-size: 18px;
                                                     font-family: "Pretendard";
                                                     font-weight: normal;
@@ -1378,7 +1443,8 @@ main {
                                                     padding-top: 20px;
                                                 }
                                             }
-                                            &::before{
+
+                                            &::before {
                                                 width: 100vw;
                                                 position: absolute;
                                                 left: 50%;
@@ -1387,14 +1453,16 @@ main {
                                                 height: 370px;
                                                 background-color: rgba($color: #d5d5d5, $alpha: 0.11);
                                             }
-                                            &:nth-of-type(1){
-                                                &::before{
+
+                                            &:nth-of-type(1) {
+                                                &::before {
                                                     content: "";
                                                     top: -50px;
                                                 }
                                             }
-                                            &:nth-of-type(7){
-                                                &::before{
+
+                                            &:nth-of-type(7) {
+                                                &::before {
                                                     content: "";
                                                     bottom: -40px;
                                                 }
@@ -1409,46 +1477,52 @@ main {
             }
         }
 
-        &.sponsor{
-            .sub_banner{
-                .inner{
-                    .banner_title{
-                        p{
+        &.sponsor {
+            .sub_banner {
+                .inner {
+                    .banner_title {
+                        p {
                             color: #fff;
                         }
                     }
                 }
             }
-            section{
-                &:not(.sub_banner){
+
+            section {
+                &:not(.sub_banner) {
                     padding-top: 150px;
                 }
 
-                &.s01{
-                    article{
+                &.s01 {
+                    article {
                         max-width: initial;
-                        .wrap{
-                            .contents{
+
+                        .wrap {
+                            .contents {
                                 width: 100%;
                                 // fafafa
                                 background-color: #fafafa;
                                 margin-top: 200px;
                                 padding-bottom: 150px;
                                 @include flex-column-center;
-                                .info{
+
+                                .info {
                                     max-width: 1210px;
                                     width: 100%;
                                     position: relative;
-                                    .banner{
+
+                                    .banner {
                                         width: 100%;
                                         aspect-ratio: 40/13;
                                         transform: translateY(-100px);
                                         min-height: 250px;
-                                        img{
+
+                                        img {
                                             @include img-cover;
                                         }
                                     }
-                                    .text{
+
+                                    .text {
                                         width: 670px;
                                         position: absolute;
                                         padding: 100px 70px;
@@ -1456,11 +1530,13 @@ main {
                                         bottom: -150px;
                                         left: 0;
                                         background-color: #fafafa;
-                                        .fs-32{
+
+                                        .fs-32 {
                                             width: 100%;
                                             margin-bottom: 40px;
                                         }
-                                        p{
+
+                                        p {
                                             width: 100%;
                                         }
                                     }
@@ -1469,7 +1545,8 @@ main {
                         }
                     }
                 }
-                .button{
+
+                .button {
                     max-width: 260px;
                     width: 100%;
                     padding: 15px 0;
@@ -1479,56 +1556,66 @@ main {
                     color: #fff;
                     font-weight: normal;
                     line-height: 1;
-                    a{
+
+                    a {
                         @include flex-center;
                         @include fullsize;
                     }
                 }
 
-                
+
             }
-            &.rd{
-                section{
-                    &.s01{
-                        p{
+
+            &.rd {
+                section {
+                    &.s01 {
+                        p {
                             width: 100%;
                             font-family: "Pretendard";
                             font-size: 18px;
                             font-weight: normal;
                             color: #6b6b6b;
                         }
-        
+
                     }
-                    &.s02{
+
+                    &.s02 {
                         padding-bottom: 150px;
-                        article{
-                            .wrap{
-                                ul{
+
+                        article {
+                            .wrap {
+                                ul {
                                     width: 100%;
                                     gap: 120px;
                                     display: flex;
                                     justify-content: space-between;
                                     align-items: flex-start;
                                     margin-top: 40px;
-                                    li{
+
+                                    li {
                                         width: 100%;
                                         @include flex-column-center;
-                                        .img-wrap{
+
+                                        .img-wrap {
                                             width: 100%;
                                             aspect-ratio: 268/149;
-                                            img{
+
+                                            img {
                                                 @include img-cover;
                                             }
                                         }
-                                        .text{
+
+                                        .text {
                                             width: 100%;
                                             padding: 40px 20px;
                                             @include flex-column-center;
                                             text-align: center;
-                                            .fs-32{
+
+                                            .fs-32 {
                                                 width: 100%;
                                             }
-                                            p{
+
+                                            p {
                                                 width: 100%;
                                                 margin-top: 20px;
                                             }
@@ -1540,48 +1627,57 @@ main {
                     }
                 }
             }
-            &.corporate{
-                section{
-                    .fs-32{
+
+            &.corporate {
+                section {
+                    .fs-32 {
                         margin-bottom: 30px;
                     }
-                    &.s01{
-                        article{
-                            .contents{
+
+                    &.s01 {
+                        article {
+                            .contents {
                                 padding-bottom: 60px;
-                                .info{  
-                                    .text{
+
+                                .info {
+                                    .text {
                                         bottom: -60px;
                                     }
                                 }
                             }
                         }
                     }
-                    &.s02{
-                        article{
-                            .wrap{
-                                .title{
+
+                    &.s02 {
+                        article {
+                            .wrap {
+                                .title {
                                     padding-left: 70px;
-                                    .fs-32{
-                                        &:nth-of-type(2){
+
+                                    .fs-32 {
+                                        &:nth-of-type(2) {
                                             margin: 50px 0 30px;
                                         }
-                                        p{
+
+                                        p {
                                             font-size: 18px;
                                             font-family: "Pretendard";
                                             color: #6b6b6b;
                                         }
                                     }
                                 }
-                                .banner{
+
+                                .banner {
                                     width: 100%;
                                     @include flex-center;
                                     gap: 1px;
                                     margin: 80px 0;
-                                    .img-wrap{
+
+                                    .img-wrap {
                                         width: 100%;
                                         aspect-ratio: 599/324;
-                                        img{
+
+                                        img {
                                             @include img-cover;
                                         }
                                     }
@@ -1589,52 +1685,63 @@ main {
                             }
                         }
                     }
-                    &.s03{
-                        article{
-                            .wrap{
+
+                    &.s03 {
+                        article {
+                            .wrap {
                                 padding-left: 70px;
-                                ul{
+
+                                ul {
                                     width: 100%;
                                     display: flex;
                                     justify-content: space-between;
                                     align-items: flex-start;
                                     gap: 10px;
                                     margin-bottom: 100px;
-                                    li{
+
+                                    li {
                                         width: 100%;
                                         @include flex-column-center;
                                         gap: 25px;
                                         text-align: center;
                                         padding: 50px 10px;
                                         background-color: #f9f9f9;
-                                        .icon-wrap{
+
+                                        .icon-wrap {
                                             height: 60px;
-                                            img{
+
+                                            img {
                                                 height: 100%;
                                                 object-fit: contain;
                                             }
                                         }
-                                        p{
+
+                                        p {
                                             font-size: 20px;
                                             font-weight: bold;
                                             color: #000;
                                         }
-                                        span{
+
+                                        span {
                                             font-size: 16px;
                                             font-family: "Pretendard";
                                             font-weight: normal;
                                         }
                                     }
                                 }
-                                .graph{
+
+                                .graph {
                                     width: 100%;
-                                    img{
+
+                                    img {
                                         width: 100%;
                                         object-fit: contain;
-                                        &.pc_img{
+
+                                        &.pc_img {
                                             display: block;
                                         }
-                                        &.mo_img{
+
+                                        &.mo_img {
                                             display: none;
                                         }
                                     }
@@ -1642,24 +1749,30 @@ main {
                             }
                         }
                     }
-                    &.s04{
+
+                    &.s04 {
                         padding-bottom: 150px;
-                        article{
-                            .wrap{
+
+                        article {
+                            .wrap {
                                 @include flex-column-center;
-                                .fs-32{
+
+                                .fs-32 {
                                     width: 100%;
                                 }
-                                ul{
+
+                                ul {
                                     width: 100%;
                                     display: flex;
                                     justify-content: space-between;
                                     align-items: flex-start;
                                     gap: 60px;
                                     margin-bottom: 60px;
-                                    li{
+
+                                    li {
                                         width: 100%;
-                                        .top{
+
+                                        .top {
                                             width: 100%;
                                             border-radius: 10px 10px 0 0;
                                             color: #fff;
@@ -1668,29 +1781,35 @@ main {
                                             font-size: 22px;
                                             padding: 20px 0;
                                         }
-                                        &:nth-of-type(1){
-                                            .top{
+
+                                        &:nth-of-type(1) {
+                                            .top {
                                                 background-color: #f8b500;
                                             }
                                         }
-                                        &:nth-of-type(2){
-                                            .top{
+
+                                        &:nth-of-type(2) {
+                                            .top {
                                                 background-color: #c3d600;
                                             }
                                         }
-                                        &:nth-of-type(3){
-                                            .top{
+
+                                        &:nth-of-type(3) {
+                                            .top {
                                                 background-color: #f8b500;
                                             }
                                         }
-                                        .img-wrap{
+
+                                        .img-wrap {
                                             width: 100%;
                                             aspect-ratio: 358/261;
-                                            img{
+
+                                            img {
                                                 @include img-cover;
                                             }
                                         }
-                                        p{
+
+                                        p {
                                             padding: 40px 10px 0;
                                             text-align: center;
                                         }
@@ -1701,31 +1820,36 @@ main {
                     }
                 }
             }
-            &.list{
-                section{
-                    &.s02{
-                        article{
-                            .wrap{
-                                .table-tab{
+
+            &.list {
+                section {
+                    &.s02 {
+                        article {
+                            .wrap {
+                                .table-tab {
                                     width: 100%;
                                     margin-bottom: 20px;
-                                    ul{
+
+                                    ul {
                                         width: 100%;
-                                        @include flex-el-list(4,3px,0px);
+                                        @include flex-el-list(4, 3px, 0px);
                                         text-align: center;
-                                        li{
+
+                                        li {
                                             font-size: 20px;
                                             font-family: "Pretendard";
                                             border-radius: 10px 10px 0 0;
                                             font-weight: 400;
                                             background-color: #f2f2f2;
                                             color: #000;
-                                            a{
+
+                                            a {
                                                 padding: 15px 0;
                                                 @include fullsize;
                                                 @include flex-center;
                                             }
-                                            &.active{
+
+                                            &.active {
                                                 background-color: #f8b500;
                                                 color: #fff;
                                             }
@@ -1739,24 +1863,28 @@ main {
             }
         }
 
-        .table-wrap{
+        .table-wrap {
             width: 100%;
             font-family: "Pretendard";
             padding-bottom: 150px;
-            .search-wrap{
+
+            .search-wrap {
                 width: 100%;
                 display: flex;
                 justify-content: flex-end;
                 align-items: center;
                 height: 40px;
                 margin-bottom: 20px;
-                form{
+
+                form {
                     height: 100%;
-                    label{
+
+                    label {
                         height: 100%;
                         @include flex-center;
                         gap: 5px;
-                        input{
+
+                        input {
                             width: 190px;
                             min-width: 190px;
                             height: 100%;
@@ -1764,7 +1892,8 @@ main {
                             border: 1px solid #ddd;
                             border-radius: 5px
                         }
-                        a{
+
+                        a {
                             @include flex-center;
                             padding: 0 25px;
                             color: #fff;
@@ -1775,31 +1904,40 @@ main {
                             height: 100%;
                             @include transition(.3s);
                             line-height: 1;
-                            &:hover{
+
+                            &:hover {
                                 background-color: #f8b500;
                             }
                         }
                     }
                 }
             }
-            table{
+
+            table {
                 width: 100%;
                 border-top: 1px solid #000;
                 margin-bottom: 60px;
-                thead,tbody{
+
+                thead,
+                tbody {
                     width: 100%;
                     text-align: center;
-                    tr{
+
+                    tr {
                         border-bottom: 1px solid #ddd;
-                        td,th{
+
+                        td,
+                        th {
                             font-size: 18px;
                             padding: 20px 5px;
                         }
                     }
-                    .ellipsis_line1{
+
+                    .ellipsis_line1 {
                         text-align: left;
                         @include transition(.15);
-                        &:hover{
+
+                        &:hover {
                             color: #f8a82a;
                             text-decoration: underline;
                         }
@@ -1807,36 +1945,44 @@ main {
                 }
             }
         }
-        .pagination{
+
+        .pagination {
             font-family: "Pretendard";
             width: 100%;
             @include flex-center;
             gap: 5px;
             height: 20px;
-            a{
+
+            a {
                 @include transition(.2s);
                 line-height: 1;
                 font-size: 16px;
                 color: #000;
             }
-            .arrow{
+
+            .arrow {
                 @include flex-center;
                 width: 20px;
                 aspect-ratio: 1/1;
                 @include bg-cover("../images/common/pagination_arrow.svg");
-                &:hover{
+
+                &:hover {
                     background-image: url(../images/common/pagination_arrow_hover.svg);
                 }
-                &.prev{
+
+                &.prev {
                     transform: scaleX(-1);
                 }
             }
-            .page{
+
+            .page {
                 @include flex-center;
-                a{
+
+                a {
                     position: relative;
                     padding: 0 10px;
-                    &::after{
+
+                    &::after {
                         content: "";
                         width: 1px;
                         height: 90%;
@@ -1846,41 +1992,78 @@ main {
                         transform: translateY(-50%);
                         background-color: #000;
                     }
-                    &:nth-last-of-type(1){
-                        &::after{
+
+                    &:nth-last-of-type(1) {
+                        &::after {
                             display: none;
                         }
                     }
-                    &:hover{
+
+                    &:hover {
                         color: #f8a82a;
                     }
                 }
             }
         }
 
-        &.news{
-            section{
-                &.s01{
-                    padding: 150px 0 30px;
-                    article{
-                        max-width: initial;
-                        .wrap{
-                            .contents{
-                                margin-top: 220px;
-                                width: 100%;
-                                background-color: #fafafa;
-                                .info{
-                                    @include inner-center(1210px);
-                                    @include flex-column-center;
-                                    .banner{
-                                        width: 100%;
-                                        transform: translateY(-100px);
-                                        img{
+        &.news {
+            &.list {
+                section {
+                    &.s01 {
+                        padding: 150px 0 30px;
+
+                        article {
+                            max-width: initial;
+
+                            .wrap {
+                                .contents {
+                                    margin-top: 220px;
+                                    width: 100%;
+                                    background-color: #fafafa;
+
+                                    .info {
+                                        @include inner-center(1210px);
+                                        @include flex-column-center;
+
+                                        .banner {
                                             width: 100%;
-                                            aspect-ratio: 1199/217;
-                                            object-fit: cover;
-                                            min-height: 200px;
-                                            object-position: 80%;
+                                            transform: translateY(-100px);
+
+                                            img {
+                                                width: 100%;
+                                                aspect-ratio: 1199/217;
+                                                object-fit: cover;
+                                                min-height: 200px;
+                                                object-position: 80%;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.s02 {
+                        article {
+                            .wrap {
+                                .table-wrap {
+                                    table {
+
+                                        thead,
+                                        tbody {
+                                            tr {
+
+                                                td,
+                                                th {
+                                                    &:nth-of-type(2) {
+                                                        display: table-cell !important
+                                                    }
+
+                                                    &:nth-of-type(3) {
+                                                        display: table-cell !important
+                                                    }
+                                                }
+                                            }
                                         }
                                     }
                                 }
@@ -1888,19 +2071,116 @@ main {
                         }
                     }
                 }
-                &.s02{
-                    article{
-                        .wrap{
-                            .table-wrap{
-                                table{
-                                    thead,tbody{
-                                        tr{
-                                            td,th{
-                                                &:nth-of-type(2){
-                                                    display: table-cell !important
+            }
+
+            &.detail {
+                section {
+                    &.s01 {
+                        padding: 150px 0;
+
+                        article {
+                            max-width: 100%;
+
+                            .wrap {
+                                .contents {
+                                    padding: 80px 0;
+                                    background-color: rgba($color: #d5d5d5, $alpha: 0.11);
+                                    margin-bottom: 100px;
+
+                                    .inner {
+                                        @include inner-center(1210px);
+                                        text-align: center;
+                                        line-height: 1.5;
+
+                                        .head {
+                                            padding-bottom: 40px;
+                                            border-bottom: 1px solid #000;
+
+                                            h2 {
+                                                margin-bottom: 40px;
+                                            }
+
+                                            p {
+                                                font-family: "Pretendard";
+                                                font-size: 18px;
+                                                font-weight: normal;
+                                                color: #6a6a6a;
+                                            }
+                                        }
+
+                                        .explain {
+                                            @include flex-column-center;
+                                            padding-top: 40px;
+                                            gap: 50px;
+                                            font-family: "Pretendard";
+                                            font-size: 18px;
+                                            color: #6a6a6a;
+                                            font-weight: normal;
+
+                                            .img-wrap {
+                                                width: 100%;
+                                                max-width: 600px;
+
+                                                img {
+                                                    width: 100%;
+                                                    object-fit: contain;
                                                 }
-                                                &:nth-of-type(3){
-                                                    display: table-cell !important
+                                            }
+
+                                            video,
+                                            iframe {
+                                                width: 100%;
+                                                max-width: 600px;
+                                                aspect-ratio: 16/9;
+                                            }
+
+                                        }
+                                    }
+                                }
+
+                                .bottom {
+                                    @include inner-center(1210px);
+
+                                    table {
+                                        width: 100%;
+
+                                        tbody {
+                                            width: 100%;
+                                            font-family: "Pretendard";
+                                            border-top: 1px solid #c4c4c4;
+
+                                            tr {
+                                                width: 100%;
+                                                border-bottom: 1px solid #c4c4c4;
+
+                                                th {
+                                                    padding: 25px 50px;
+                                                    font-size: 16px;
+                                                    font-weight: normal;
+                                                    color: #6a6a6a;
+                                                }
+
+                                                td {
+                                                    width: 100%;
+                                                    font-weight: normal;
+
+                                                    a {
+                                                        width: 100%;
+                                                        padding: 25px 50px 25px 0;
+                                                        display: flex;
+                                                        justify-content: space-between;
+                                                        align-items: center;
+
+                                                        div:not(.date) {
+                                                            font-size: 18px;
+                                                            padding-right: 20px;
+                                                        }
+
+                                                        .date {
+                                                            font-size: 16px;
+                                                            color: #6a6a6a;
+                                                        }
+                                                    }
                                                 }
                                             }
                                         }
@@ -1913,24 +2193,27 @@ main {
             }
         }
 
-        &.campaign{
-            &.list{
-                section{
-                    &.s01{
+        &.campaign {
+            &.list {
+                section {
+                    &.s01 {
                         padding: 150px 0 60px;
-                        article{
-                            .wrap{
-                                .contents{
-                                    h2{
+
+                        article {
+                            .wrap {
+                                .contents {
+                                    h2 {
                                         text-align: center;
                                         font-weight: bold;
                                         margin-bottom: 130px;
                                     }
-                                    ul{
+
+                                    ul {
                                         width: 100%;
-                                        @include flex-el-list(3,15px,140px);
+                                        @include flex-el-list(3, 15px, 140px);
                                         position: relative;
-                                        &::before{
+
+                                        &::before {
                                             content: "";
                                             position: absolute;
                                             background-color: rgba($color: #d5d5d5, $alpha: .11);
@@ -1941,19 +2224,24 @@ main {
                                             transform: translateX(-50%);
                                             @include drag-off;
                                         }
-                                        li{
+
+                                        li {
                                             font-family: "Pretendard";
-                                            a{
+
+                                            a {
                                                 @include flex-column;
                                                 width: 100%;
-                                                .img-wrap{
+
+                                                .img-wrap {
                                                     width: 100%;
                                                     aspect-ratio: 78/53;
                                                     position: relative;
-                                                    img{
+
+                                                    img {
                                                         @include img-cover;
                                                     }
-                                                    span{
+
+                                                    span {
                                                         position: absolute;
                                                         padding: 7px 25px;
                                                         border-radius: 15px;
@@ -1965,22 +2253,26 @@ main {
                                                         @include flex-center;
                                                     }
                                                 }
-                                                .text{
+
+                                                .text {
                                                     padding: 35px 20px 20px;
                                                     border: 1px solid #c8c8c8;
                                                     border-top: none;
-                                                    p{
+
+                                                    p {
                                                         font-size: 16px;
                                                         font-weight: 600;
                                                         margin-bottom: 10px;
                                                     }
-                                                    span{
+
+                                                    span {
                                                         font-size: 15px;
                                                         font-weight: normal;
                                                         color: #6a6a6a;
                                                     }
                                                 }
-                                                .date{
+
+                                                .date {
                                                     border: 1px solid #c8c8c8;
                                                     border-top: none;
                                                     padding: 10px 20px;
@@ -1988,28 +2280,31 @@ main {
                                                     font-weight: bold;
                                                 }
                                             }
-                                            &.t_01{
-                                                a{
-                                                    .img-wrap{
-                                                        span{
+
+                                            &.t_01 {
+                                                a {
+                                                    .img-wrap {
+                                                        span {
                                                             background-color: #f8b500
                                                         }
                                                     }
                                                 }
                                             }
-                                            &.t_02{
-                                                a{
-                                                    .img-wrap{
-                                                        span{
+
+                                            &.t_02 {
+                                                a {
+                                                    .img-wrap {
+                                                        span {
                                                             background-color: #e31c93;
                                                         }
                                                     }
                                                 }
                                             }
-                                            &.t_03{
-                                                a{
-                                                    .img-wrap{
-                                                        span{
+
+                                            &.t_03 {
+                                                a {
+                                                    .img-wrap {
+                                                        span {
                                                             background-color: #c3d600;
                                                         }
                                                     }
@@ -2017,7 +2312,8 @@ main {
                                             }
                                         }
                                     }
-                                    .pagination{
+
+                                    .pagination {
                                         font-family: "Pretendard";
                                         margin-top: 60px;
                                     }
@@ -2026,22 +2322,25 @@ main {
                         }
                     }
                 }
-                &.review{
-                    section{
-                        &.s01{
-                            article{
-                                .wrap{
-                                    .contents{
-                                        ul{
-                                            &::before{
+
+                &.review {
+                    section {
+                        &.s01 {
+                            article {
+                                .wrap {
+                                    .contents {
+                                        ul {
+                                            &::before {
                                                 height: calc(100% / 2 + 30px);
                                             }
-                                            li{
-                                                a{
-                                                    .text{
+
+                                            li {
+                                                a {
+                                                    .text {
                                                         border: none;
                                                         background-color: transparent;
-                                                        p{
+
+                                                        p {
                                                             line-height: 1.5
                                                         }
                                                     }
@@ -2055,31 +2354,38 @@ main {
                     }
                 }
             }
-            &.detail{
-                section{
-                    &.s01{
+
+            &.detail {
+                section {
+                    &.s01 {
                         padding: 150px 0;
-                        article{
+
+                        article {
                             max-width: initial;
-                            .wrap{
-                                .contents{
+
+                            .wrap {
+                                .contents {
                                     background-color: rgba($color: #d5d5d5, $alpha: .11);
-                                    .info{
+
+                                    .info {
                                         @include inner-center(1210px);
                                         padding: 60px 0;
                                         text-align: center;
                                         font-family: "Pretendard";
-                                        p{
+
+                                        p {
                                             font-size: 18px;
                                             color: #6a6a6a;
                                             font-weight: normal;
                                             line-height: 1.5;
                                         }
-                                        .title{
+
+                                        .title {
                                             width: 100%;
                                             padding-bottom: 30px;
                                             border-bottom: 1px solid #000;
-                                            .campaign_category{
+
+                                            .campaign_category {
                                                 display: inline-block;
                                                 padding: 7px 25px;
                                                 border-radius: 15px;
@@ -2087,58 +2393,69 @@ main {
                                                 font-weight: normal;
                                                 background-color: #f8b500;
                                             }
-                                            .fs-32{
+
+                                            .fs-32 {
                                                 margin: 30px 0 20px;
                                                 font-family: "Chosunilbo_myungjo";
                                             }
                                         }
-                                        .date{
+
+                                        .date {
                                             padding: 30px 0 50px;
                                             font-size: 18px;
                                             font-weight: bold
                                         }
-                                        .explain{
+
+                                        .explain {
                                             width: 100%;
                                             @include flex-column;
                                             gap: 50px;
-                                            >*{
+
+                                            >* {
                                                 width: 100%;
                                             }
                                         }
                                     }
                                 }
-                                .bottom{
+
+                                .bottom {
                                     @include inner-center(1210px);
                                     display: flex;
                                     align-items: flex-start;
                                     justify-content: center;
-                                    >div{
+
+                                    >div {
                                         width: 100%;
                                         font-family: "Pretendard";
                                         text-align: left;
-                                        span{
+
+                                        span {
                                             font-size: 18px;
-                                            font-weight: normal;
-                                            color: #6a6a6a;
+                                            font-weight: 600;
+                                            color: #000;
                                             display: inline-block;
                                         }
-                                        a{
+
+                                        a {
                                             display: flex;
                                             justify-content: flex-start;
                                             align-items: center;
                                             gap: 20px;
                                             margin-top: 20px;
                                             border: 1px solid #dbdbdb;
-                                            .img-wrap{
+
+                                            .img-wrap {
                                                 max-width: 220px;
                                                 width: 100%;
                                                 aspect-ratio: 78/53;
-                                                img{
+
+                                                img {
                                                     @include img-cover;
                                                 }
                                             }
-                                            .text{
-                                                .campaign_category{
+
+                                            .text {
+                                                .campaign_category {
                                                     padding: 7px 25px;
                                                     border-radius: 15px;
                                                     font-weight: normal;
@@ -2147,20 +2464,24 @@ main {
                                                     margin-bottom: 20px;
                                                     background-color: #e31c93;
                                                 }
-                                                p{
+
+                                                p {
                                                     font-size: 18px;
                                                     font-weight: 600;
                                                     line-height: 1.5;
                                                 }
                                             }
                                         }
-                                        &.next{
+
+                                        &.next {
                                             text-align: right;
-                                            a{
+
+                                            a {
                                                 justify-content: flex-end;
                                                 border-left: none;
-                                                .text{
-                                                    .campaign_category{
+
+                                                .text {
+                                                    .campaign_category {
                                                         background-color: #c3d600
                                                     }
                                                 }
@@ -2174,6 +2495,297 @@ main {
                 }
             }
         }
+    }
+}
+.dark_bg{
+    position: fixed;
+    left: 0;
+    top: 0;
+    @include fullsize;
+    background-color: #000;
+    opacity: .5;
+    z-index: 100;
+    display: none;
+    &.active{
+        display: block;
+    }
+}
+.contact_popup {
+    max-width: 900px;
+    padding: 40px 0;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 150;
+    background-color: #fff;
+    display: none;
+    max-height: 1172.19px;
+    height: 100%;
+    .inner{
+        width: 100%;
+        max-height: 1092.19px;
+        height: 100%;    
+        padding: 0 60px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        .head {
+            width: 100%;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #000;
+            font-family: "Pretendard";
+            
+            .top{
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                margin-bottom: 35px;
+                .logo {
+                    width: 132px;
+                    aspect-ratio: 192/55;
+        
+                    img {
+                        @include img-cover;
+                    }
+                }
+                .close{
+                    width: 40px;
+                    height: 40px;
+                    border: 1px solid #ddd;
+                    background-color: #Fff;
+                    cursor: pointer;
+                    position: relative;
+                    @include transition(.3s);
+                    &::before,&::after{
+                        content: "";
+                        position: absolute;
+                        width: 90%;
+                        height: 1px;
+                        background-color: #ddd;
+                        left: 50%;
+                        top: 50%;
+                        @include transition(.3s);
+                    }
+            
+                    &::before{
+                        transform: translate(-50%,-50%) rotate(45deg);
+                    }
+                    &::after{
+                        transform: translate(-50%,-50%) rotate(-45deg);
+                    }
+                    &:hover{
+                        background-color: #c3d600;
+                        border-color: #c3d600;
+                        &::before,&::after{
+                            background-color: #fff;
+                        }
+                    }
+                }
+
+            }
+    
+            h2 {
+                font-size: 28px;
+                font-weight: bold;
+            }
+        }
+    
+        form {
+            width: 100%;
+            font-family: "Pretendard";
+    
+            .label_wrap {
+                padding: 15px 0px;
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: 80px;
+                border-bottom: 1px solid #dddddd;
+    
+                .tit {
+                    font-size: 20px;
+                    font-weight: 600;
+                    min-width: 100px;
+                    width: 100px;
+                    height: 45px;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                }
+    
+                .label_box {
+                    max-width: 500px;
+                    width: 100%;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    min-height: 45px;
+    
+                    label {
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        gap: 10px;
+                    }
+    
+                    input[type="text"],
+                    select {
+                        border: 1px solid #ddd;
+                        border-radius: 5px;
+                        width: 321px;
+                        height: 45px;
+                        padding: 0 20px;
+    
+                        &::placeholder {
+                            color: #aaa;
+                        }
+                    }
+    
+                    &.cate {
+                        gap: 10px 50px;
+                        flex-wrap: wrap;
+                        input[type='radio'] {
+                            -webkit-appearance: none;
+                            -moz-animation: none;
+                            appearance: none;
+                            width: 25px;
+                            height: 25px;
+                            border-radius: 50%;
+                            border: 1px solid #ddd;
+    
+                            &:checked {
+                                background-color: #ef7f00;
+                                border: 7px solid #fff;
+                                box-shadow: 0 0 0 1px #ddd;
+                            }
+                        }
+    
+                        p {
+                            font-size: 18px;
+                            font-weight: normal;
+                            color: #6b6b6b;
+                        }
+    
+                    }
+    
+                    &.add {
+                        label {
+                            flex-direction: column;
+                            align-items: flex-start;
+                            justify-content: center;
+    
+                            .top {
+                                input[type="text"] {
+                                    margin-right: 10px;
+                                }
+    
+                                input[type="button"] {
+                                    padding: 0 20px;
+                                    background-color: #e42296;
+                                    height: 45px;
+                                    font-size: 18px;
+                                    color: #fff;
+                                    font-weight: normal;
+                                    cursor: pointer;
+                                }
+                            }
+    
+                            .bottom {
+                                width: 100%;
+    
+                                input[type="text"] {
+                                    width: 100%;
+                                    margin-bottom: 10px;
+    
+                                    &:last-child {
+                                        margin-bottom: 0
+                                    }
+                                }
+                            }
+                        }
+                    }
+    
+                    &.phone {
+                        gap: 10px;
+    
+                        select,
+                        input[type="text"] {
+                            width: 105px;
+                        }
+                    }
+    
+                    &.mail {
+                        gap: 2px;
+    
+                        input[type='text'],
+                        select {
+                            width: 140px;
+                        }
+    
+                        select {
+                            margin-left: 8px;
+                        }
+                    }
+    
+                    &.detail {
+                        textarea {
+                            width: 100%;
+                            height: 160px;
+                            overflow-y: auto;
+                            padding: 20px;
+                            border: 1px solid #ddd;
+    
+                            &::placeholder {
+                                color: #aaa;
+                            }
+                        }
+                    }
+                }
+            }
+    
+            .account_wrap {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                padding: 25px;
+                padding-right: 0;
+                input[type="checkbox"] {
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 3px;
+                    border: 1px solid #ddd;
+                    margin-right: 15px;
+                }
+    
+                label {
+                    @include drag-off;
+                    pointer-events: visible;
+                    font-size: 18px;
+                    font-weight: 600;
+                }
+            }
+        }
+    
+        .submit {
+            font-family: inherit;
+            padding: 20px 140px;
+            display: inline-block;
+            margin: 50px auto 0;
+            text-align: center;
+            border-radius: 5px;
+            background-color: #f8b500;
+            color: #fff;
+            font-size: 26px;
+            cursor: pointer;
+        }
+    }
+    &.active{
+        display: flex
     }
 }
 

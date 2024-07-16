@@ -1,0 +1,175 @@
+<div class="dark_bg"></div>
+<div class="contact_popup">
+    <div class="inner">
+        <div class="head">
+            <div class="top">
+                <div class="logo">
+                    <img src="../images/common/logo.png" alt="">
+                </div>
+                <div class="close">
+
+                </div>
+            </div>
+            <h2>문의하기</h2>
+        </div>
+        <form>
+            <div class="label_wrap">
+                <label class="tit">신청구분</label>
+                <div class="label_box cate">
+                    <label>
+                        <input type="radio" name="category">
+                        <p>기업후원</p>
+                    </label>
+                    <label>
+                        <input type="radio" name="category">
+                        <p>물품후원</p>
+                    </label>
+                    <label>
+                        <input type="radio" name="category">
+                        <p>봉사활동</p>
+                    </label>
+                </div>
+            </div>
+            <div class="label_wrap">
+                <label for="company" class="tit">기업/단체명</label>
+                <div class="label_box">
+                    <input type="text" id="company">
+                </div>
+            </div>
+            <div class="label_wrap">
+                <label for="address" class="tit">주소</label>
+                <div class="label_box add">
+                    <label>
+                        <div class="top">
+                            <input type="text" id="address_code_id" placeholder="우편번호" readonly>
+                            <input type="button" onclick="execDaumPostcode()" value="우편번호"></input>
+                        </div>
+                        <div class="bottom">
+                            <input type="text" id="address01" placeholder="기본 주소" readonly>
+                            <input type="text" id="address02" placeholder="상세 주소">
+                        </div>
+                    </label>
+                </div>
+            </div>
+            <div class="label_wrap">
+                <label for="name" class="tit">이름</label>
+                <div class="label_box">
+                    <input type="text" for="name">
+                </div>
+            </div>
+            <div class="label_wrap">
+                <label for="phone" class="tit">연락처</label>
+                <div class="label_box phone">
+                    <select name="phone01" id="phone01" select-data="">
+                        <option value="" selected disabled>선택</option>
+                        <option value="010">010</option>
+                        <option value="011">011</option>
+                        <option value="016">016</option>
+                        <option value="017">017</option>
+                        <option value="018">018</option>
+                        <option value="019">019</option>
+                    </select>
+                    <span>-</span>
+                    <input type="text" id="phone02">
+                    <span>-</span>
+                    <input type="text" id="phone03">
+                </div>
+            </div>
+            <div class="label_wrap">
+                <label for="email" class="tit">이메일</label>
+                <div class="label_box mail">
+                    <input type="text">
+                    @
+                    <input type="text">
+                    <select name="address02" id="address02">
+                        <option value="직접입력">직접입력</option>
+                        <option value="naver.com">naver.com</option>
+                        <option value="gmail.com">gmail.com</option>
+                        <option value="daum.net">daum.net</option>
+                        <option value="nate.com">nate.com</option>
+                    </select>
+                </div>
+            </div>
+            <div class="label_wrap">
+                <label for="detail" class="tit">문의내용</label>
+                <div class="label_box detail">
+                    <textarea placeholder="예시) 예상 후원 규모, 선호하는 사업 등
+※ 문의주신 사항은 확인 후 담당자 배정 후 업무일
+기준 2~3일 내 연락드리겠습니다.
+        "></textarea>
+                </div>
+            </div>
+            <div class="account_wrap">
+                <input type="checkbox" id="account">
+                <label for="account">개인정보 수집 · 및 동의(필수)</label>
+            </div>
+        </form>
+        <button class="submit">후원하기</button>
+    </div>
+</div>
+
+
+<script src="../js/postcode.min.js"></script>
+
+<script>
+    function execDaumPostcode() {
+        new daum.Postcode({
+            oncomplete: function(data) {
+                var addr = '';
+                var extraAddr = '';
+                if (data.userSelectedType === 'R') {
+                    addr = data.roadAddress;
+                } else {
+                    addr = data.jibunAddress;
+                }
+
+                if (data.userSelectedType === 'R') {
+                    if (data.bname !== '' && /[동|로|가]$/g.test(data.bname)) {
+                        extraAddr += data.bname;
+                    }
+                    if (data.buildingName !== '' && data.apartment === 'Y') {
+                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                    }
+                    if (extraAddr !== '') {
+                        extraAddr = ' (' + extraAddr + ')';
+                    }
+                } else {
+                    document.getElementById("address01").value = '';
+                }
+
+                document.getElementById('address_code_id').value = `(${data.zonecode})`;
+                document.getElementById("address01").value = addr;
+                document.getElementById("address01").value += extraAddr;
+                document.getElementById("address02").focus();
+            }
+        }).open();
+    }
+
+    let label_mail = document.querySelector(".label_box.mail"),
+        mail_select = label_mail.querySelector("select"),
+        mail_change = label_mail.querySelectorAll("input")[1];
+
+    mail_select.addEventListener("change", function() {
+        if (mail_select.value == "직접입력") {
+            mail_change.value = "";
+            mail_change.focus();
+        } else {
+            mail_change.value = mail_select.value;
+        }
+    });
+
+    let contact_popup = document.querySelector(".contact_popup"),
+        dark_bg = document.querySelector(".dark_bg");
+    document.querySelector(".pop_btn").addEventListener("click", function(e) {
+        e.preventDefault();
+        contact_popup.classList.add("active");
+        dark_bg.classList.add("active");
+        body.classList.add("stop_scroll");
+    });
+
+    contact_popup.querySelector(".close").addEventListener("click", function(e) {
+        contact_popup.classList.remove("active");
+        dark_bg.classList.remove("active");
+        body.classList.remove("stop_scroll")
+    });
+</script>

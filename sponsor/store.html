@@ -24,7 +24,7 @@ $PAGE_CODE_2 = "0303";
                     <li><a href="../sponsor/list.html">후원내역</a></li>
                 </ul>
                 <div class="contents">
-                    <div class="info">
+                    <div class="info" data-aos="fade-up">
                         <div class="banner">
                             <img src="../images/sponsor/store01.png" alt="착한가게 참여를 통한 후원">
                         </div>
@@ -45,34 +45,39 @@ $PAGE_CODE_2 = "0303";
     <section class="s04">
         <article>
             <div class="wrap">
-                <div class="fs-32">후원 혜택</div>
+                <div class="fs-32" data-aos="fade-up">후원 혜택</div>
                 <ul>
-                    <li>
+                    <li data-aos="fade-up">
                         <div class="img-wrap"><img src="../images/sponsor/store02.png" alt="착한가게를 인증하는 편판 발송"></div>
                         <p>
                             착한가게를 인증하는 편판 발송
                         </p>
                     </li>
-                    <li>
+                    <li data-aos="fade-up">
                         <div class="img-wrap"><img src="../images/sponsor/store03.png" alt="기부금 영수증 발행 및 세제 혜택"></div>
                         <p>
                             기부금 영수증 발행 및 세제 혜택
                         </p>
                     </li>
-                    <li>
+                    <li data-aos="fade-up">
                         <div class="img-wrap"><img src="../images/sponsor/store04.png" alt="오케이좋아 연예인봉사단과 함께 홍보가능"></div>
                         <p>
                             오케이좋아 연예인봉사단과 함께 홍보가능
                         </p>
                     </li>
                 </ul>
-                <div class="button">
-                    <a href="#none">착한가게 문의하기</a>
+                <div class="button" data-aos="fade-up">
+                    <a href="javascript:alert('준비중입니다');">착한가게 문의하기</a>
                 </div>
             </div>
         </article>
     </section>
 </main>
+
+<?php 
+    include_once "../include/contact_popup.html"
+?>
+
 
 <?php
 include_once "../include/footer.html"

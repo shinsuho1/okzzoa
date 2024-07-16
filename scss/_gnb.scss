@@ -16,7 +16,7 @@ header{
         z-index: 2;
         .left{
             @include flex-center;
-            gap: 50px;
+            gap: 80px;
             .logo{
                 display: inline-flex;
                 width: 190px;
@@ -27,7 +27,7 @@ header{
             }
             #gnb{
                 @include flex-center;
-                gap: 100px;
+                gap: 80px;
                 >li{
                     position: relative;
                     >a{
@@ -566,7 +566,6 @@ footer{
         .header-wrap{
             padding: 0 5%;
             .left{
-                gap: 40px;
                 .logo{
                     width: 160px;
                 }
@@ -655,7 +654,6 @@ footer{
         top: -$headerHeight;
         .header-wrap{
             .left{
-                gap: 40px;
                 .logo{
                     width: 140px;
                 }
@@ -719,14 +717,14 @@ footer{
     }
 }
 @media (max-width: 540px){
+    $headerHeight: 65px;
     header{
         height: $headerHeight;
         top: -$headerHeight;
         .header-wrap{
             .left{
-                gap: 40px;
                 .logo{
-                    width: 140px;
+                    width: 130px;
                 }
                 #gnb{
                     top: $headerHeight;
@@ -734,16 +732,16 @@ footer{
                     padding-top: 150px;
                     >li{
                         >a{
-                            // font-size: 28px;
-                            // padding: 20px 50px 20px 30px;
+                            font-size: 22px;
+                            padding: 15px 40px 15px 30px;
                         }
                         .sub-menu{
-                            // padding: 30px 60px 60px;
-                            // font-size: 18px;
+                            padding: 20px 50px 50px;
+                            font-size: 16px;
                         }
                     }
                     &::before{
-                        width: 360px;
+                        width: 200px;
                     }
                 }
         
@@ -754,7 +752,7 @@ footer{
                     font-size: 14px;
                     position: absolute;
                     width: calc(100% - 50px);
-                    top: 80px;
+                    top: 90px;
                     left: 150%;
                     transform: translateX(-50%);
                     gap: 13px;
@@ -794,6 +792,46 @@ footer{
     }
 }
 @media (max-width:450px){
+    $headerHeight: 60px;
+    header{
+        height: $headerHeight;
+        top: -$headerHeight;
+        .header-wrap{
+            .left{
+                .logo{
+                    width: 120px;
+                }
+                #gnb{
+                    top: $headerHeight;
+                    height: calc(100% - $headerHeight);
+                    padding-top: 120px;
+                    >li{
+                        >a{
+                            font-size: 20px;
+                            padding: 13px 40px 13px 30px;
+                        }
+                        .sub-menu{
+                            padding: 20px 50px 50px;
+                            font-size: 15px;
+                        }
+                    }
+                    &::before{
+                        width: 200px;
+                    }
+                }
+        
+            }
+            .right{
+                ul{
+                    top: 60px;
+                    gap: 8px;
+                }
+                form{
+                    top: 125px;
+                }
+            }
+        }
+    }
     footer{
         .footer-wrap{
             .logo{

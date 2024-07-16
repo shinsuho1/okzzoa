@@ -74,10 +74,6 @@ window.addEventListener("DOMContentLoaded",function(){
 
     if(url == "main"){
         var main_slide = new Swiper(".main_slide", {
-            loop: true,
-            autoplay: {
-                delay: 8000,
-            },
             speed: 1000,
         });
 
@@ -89,7 +85,7 @@ window.addEventListener("DOMContentLoaded",function(){
                 disableOnInteraction: true,
             },
             slidesPerView: "auto",
-            speed: 10000,
+            speed: 5000,
             on: {
                 resize: function (el) {
                     setTimeout(() => {
