@@ -70,9 +70,9 @@
                         <option value="019">019</option>
                     </select>
                     <span>-</span>
-                    <input type="text" id="phone02">
+                    <input type="text" id="phone02" maxlength="4">
                     <span>-</span>
-                    <input type="text" id="phone03">
+                    <input type="text" id="phone03" maxlength="4">
                 </div>
             </div>
             <div class="label_wrap">
@@ -158,18 +158,21 @@
         }
     });
 
-    let contact_popup = document.querySelector(".contact_popup"),
-        dark_bg = document.querySelector(".dark_bg");
-    document.querySelector(".pop_btn").addEventListener("click", function(e) {
-        e.preventDefault();
-        contact_popup.classList.add("active");
-        dark_bg.classList.add("active");
-        body.classList.add("stop_scroll");
-    });
+    if (document.querySelector(".sponsor.corporate")) {
+        let contact_popup = document.querySelector(".contact_popup"),
+            dark_bg = document.querySelector(".dark_bg");
+        
+            document.querySelector(".pop_btn").addEventListener("click", function(e) {
+            e.preventDefault();
+            contact_popup.classList.add("active");
+            dark_bg.classList.add("active");
+            body.classList.add("stop_scroll");
+        });
 
-    contact_popup.querySelector(".close").addEventListener("click", function(e) {
-        contact_popup.classList.remove("active");
-        dark_bg.classList.remove("active");
-        body.classList.remove("stop_scroll")
-    });
+        contact_popup.querySelector(".close").addEventListener("click", function(e) {
+            contact_popup.classList.remove("active");
+            dark_bg.classList.remove("active");
+            body.classList.remove("stop_scroll")
+        });
+    }
 </script>

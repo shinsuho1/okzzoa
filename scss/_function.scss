@@ -443,15 +443,14 @@ input[type="checkbox"] {
     @include appearance-none;
     width: 40px;
     height: 40px;
-    border: 1px solid #aaa;
+    border: 1px solid #ddd;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    transition: .3s;
-
+    @include transition(.15s);
     &:checked {
-        border-color: transparent;
-        background-image: url("../images/common/input_check.png");
+        border-color: #c3d600;
+        background-image: url("../images/common/input_check.svg");
     }
 }
 
