@@ -1732,11 +1732,11 @@ main {
 
                                 .graph {
                                     width: 100%;
-
+                                    overflow-x: scroll;
                                     img {
                                         width: 100%;
                                         object-fit: contain;
-
+                                        min-width: 1000px;
                                         &.pc_img {
                                             display: block;
                                         }
@@ -1744,6 +1744,9 @@ main {
                                         &.mo_img {
                                             display: none;
                                         }
+                                    }
+                                    &::-webkit-scrollbar-thumb {
+                                        background-color: #e31c93;
                                     }
                                 }
                             }
